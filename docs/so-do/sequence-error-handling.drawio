@@ -1,0 +1,421 @@
+<mxfile host="Electron">
+  <diagram id="seq_error_flow" name="Sequence - Error Handling Flow">
+    <mxGraphModel dx="1168" dy="713" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="0" pageScale="1" pageWidth="2620" pageHeight="1750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="11" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#e11d48;strokeWidth=2;fontColor=#ffffff;fontFamily=Helvetica;fontSize=16;verticalAlign=middle;align=center;" value="&lt;b&gt;SƠ ĐỒ TUẦN TỰ 3: LUỒNG PHÂN TÍCH CÚ PHÁP VÀ XỬ LÝ MÃ LỖI GIAO THỨC (ERROR HANDLING FLOW)&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:12.5px;font-weight:normal;&#39; color=&#39;#cbd5e1&#39;&gt;Hệ thống Máy chủ Dịch vụ Dòng lệnh – Học phần AJP201 (Đề tài 31) &amp;nbsp;|&amp;nbsp; Minh họa 3 kịch bản lỗi chuẩn hóa (ERR_SYNTAX, ERR_UNKNOWN_COMMAND, ERR_INTERNAL) bảo toàn kết nối&lt;/font&gt;" vertex="1">
+          <mxGeometry height="54" width="2570" x="25" y="12" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#f0f9ff;strokeColor=#0284c7;strokeWidth=1.5;fontColor=#0369a1;fontFamily=Helvetica;fontSize=12.5;verticalAlign=top;align=center;spacingTop=6;" value="&lt;b&gt;TẦNG MÁY KHÁCH (Presentation / Client Side)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="1545" width="425" x="25" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.5;fontColor=#15803d;fontFamily=Helvetica;fontSize=12.5;verticalAlign=top;align=center;spacingTop=6;" value="&lt;b&gt;TẦNG MẠNG &amp;amp; GIAO THỨC (Network &amp;amp; Protocol Layer)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="1545" width="815" x="465" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#5b21b6;fontFamily=Helvetica;fontSize=12.5;verticalAlign=top;align=center;spacingTop=6;" value="&lt;b&gt;TẦNG NGHIỆP VỤ &amp;amp; ĐIỀU PHỐI (Business &amp;amp; Dispatching Layer)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="1545" width="955" x="1295" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#d97706;strokeWidth=1.5;fontColor=#92400e;fontFamily=Helvetica;fontSize=12.5;verticalAlign=top;align=center;spacingTop=6;" value="&lt;b&gt;MÔ HÌNH BẢN TIN GIAO THỨC (Protocol Model)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="1545" width="330" x="2265" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;strokeWidth=1.8;fontColor=#0c4a6e;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" value="&lt;b&gt;ClientUser&lt;/b&gt;&lt;br&gt;&lt;small&gt;&lt;i&gt;(Người dùng)&lt;/i&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="56" width="130" x="45" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="17" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#0284c7;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="168" as="sourcePoint" />
+            <mxPoint x="110" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;strokeWidth=1.8;fontColor=#0c4a6e;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" value="&lt;b&gt;ConsoleClient&lt;/b&gt; (F11)&lt;br&gt;&lt;small&gt;&lt;i&gt;Ứng dụng khách Console&lt;/i&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="56" width="190" x="235" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="19" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#0284c7;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="168" as="sourcePoint" />
+            <mxPoint x="330" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;strokeWidth=1.8;fontColor=#14532d;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" value="&lt;b&gt;Socket&lt;/b&gt; (F05)&lt;br&gt;&lt;small&gt;&lt;i&gt;Kênh TCP Stream&lt;/i&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="56" width="175" x="488" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#16a34a;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="168" as="sourcePoint" />
+            <mxPoint x="575" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;strokeWidth=1.8;fontColor=#14532d;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" value="&lt;b&gt;ClientHandler&lt;/b&gt; (F05)&lt;br&gt;&lt;small&gt;&lt;i&gt;Worker luồng phục vụ&lt;/i&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="56" width="195" x="748" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="23" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#16a34a;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="845" y="168" as="sourcePoint" />
+            <mxPoint x="845" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="24" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;strokeWidth=1.8;fontColor=#14532d;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" value="&lt;b&gt;ProtocolParser&lt;/b&gt; (F03)&lt;br&gt;&lt;small&gt;&lt;i&gt;Phân tích cú pháp dòng lệnh&lt;/i&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="56" width="200" x="1050" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#16a34a;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1150" y="168" as="sourcePoint" />
+            <mxPoint x="1150" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;strokeWidth=1.8;fontColor=#3b0764;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" value="&lt;b&gt;CommandDispatcher&lt;/b&gt; (F04)&lt;br&gt;&lt;small&gt;&lt;i&gt;Bộ điều phối lệnh&lt;/i&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="56" width="205" x="1328" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="27" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#7c3aed;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1430" y="168" as="sourcePoint" />
+            <mxPoint x="1430" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="28" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;strokeWidth=1.8;fontColor=#3b0764;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" value="&lt;b&gt;CommandRegistry&lt;/b&gt; (F04)&lt;br&gt;&lt;small&gt;&lt;i&gt;Map&amp;lt;String, Function&amp;gt;&lt;/i&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="56" width="205" x="1668" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="29" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#7c3aed;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1770" y="168" as="sourcePoint" />
+            <mxPoint x="1770" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;strokeWidth=1.8;fontColor=#3b0764;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" value="&lt;b&gt;CommandHandler&lt;/b&gt; (F06–F16)&lt;br&gt;&lt;small&gt;&lt;i&gt;Function&amp;lt;String, String&amp;gt;&lt;/i&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="56" width="215" x="2003" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="31" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#7c3aed;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2110" y="168" as="sourcePoint" />
+            <mxPoint x="2110" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="32" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;strokeWidth=1.8;fontColor=#78350f;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" value="&lt;b&gt;Response&lt;/b&gt; (F01, F10)&lt;br&gt;&lt;small&gt;&lt;i&gt;record Response(status, payload)&lt;/i&gt;&lt;/small&gt;&lt;br&gt;&lt;small&gt;&lt;i&gt;Tầng Giao thức Mạng&lt;/i&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="56" width="225" x="2318" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="33" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#d97706;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2430" y="168" as="sourcePoint" />
+            <mxPoint x="2430" y="1605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff44;strokeColor=#be185d;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="1202" width="2530" x="45" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="35" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=8 5;strokeWidth=2;strokeColor=#be185d;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="45" y="635" as="sourcePoint" />
+            <mxPoint x="2575" y="635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="36" edge="1" parent="1" style="endArrow=none;dashed=1;dashPattern=8 5;strokeWidth=2;strokeColor=#be185d;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="45" y="1055" as="sourcePoint" />
+            <mxPoint x="2575" y="1055" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bae6fd;strokeColor=#0284c7;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="1325" width="14" x="323" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="40" width="14" x="568" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="1185" width="14" x="838" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fecaca;strokeColor=#dc2626;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="75" width="14" x="1143" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fde68a;strokeColor=#d97706;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="40" width="14" x="2423" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="38" width="14" x="568" y="542" as="geometry" />
+        </mxCell>
+        <mxCell id="43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="35" width="14" x="1143" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="44" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ddd6fe;strokeColor=#7c3aed;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="133" width="14" x="1423" y="742" as="geometry" />
+        </mxCell>
+        <mxCell id="45" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fed7aa;strokeColor=#ea580c;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="40" width="14" x="1763" y="778" as="geometry" />
+        </mxCell>
+        <mxCell id="46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fde68a;strokeColor=#d97706;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="38" width="14" x="2423" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="32" width="14" x="568" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="32" width="14" x="1143" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ddd6fe;strokeColor=#7c3aed;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="207" width="14" x="1423" y="1158" as="geometry" />
+        </mxCell>
+        <mxCell id="50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ddd6fe;strokeColor=#7c3aed;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="36" width="14" x="1763" y="1192" as="geometry" />
+        </mxCell>
+        <mxCell id="51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fecaca;strokeColor=#dc2626;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="42" width="14" x="2103" y="1262" as="geometry" />
+        </mxCell>
+        <mxCell id="52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fde68a;strokeColor=#d97706;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="38" width="14" x="2423" y="1396" as="geometry" />
+        </mxCell>
+        <mxCell id="53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="33" width="14" x="568" y="1465" as="geometry" />
+        </mxCell>
+        <mxCell id="54" parent="1" style="shape=card;size=14;direction=west;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be185d;strokeWidth=1.8;fontColor=#881337;fontFamily=Helvetica;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;alt&lt;/b&gt; — 3 Tình huống Xử lý Lỗi" vertex="1">
+          <mxGeometry height="28" width="240" x="45" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="55" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;strokeWidth=1.5;fontColor=#991b1b;fontFamily=Helvetica;fontSize=12;align=left;spacingLeft=10;" value="&lt;b&gt;[Nhánh 1: Syntax Error – Dòng lệnh rỗng hoặc sai cú pháp]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="24" width="410" x="355" y="342" as="geometry" />
+        </mxCell>
+        <mxCell id="56" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;strokeWidth=1.5;fontColor=#9a3412;fontFamily=Helvetica;fontSize=12;align=left;spacingLeft=10;" value="&lt;b&gt;[Nhánh 2: Unknown Command – Cú pháp hợp lệ nhưng tên lệnh không tồn tại trong Registry]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="24" width="595" x="61" y="641" as="geometry" />
+        </mxCell>
+        <mxCell id="57" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#fae8ff;strokeColor=#9333ea;strokeWidth=1.5;fontColor=#6b21a8;fontFamily=Helvetica;fontSize=12;align=left;spacingLeft=10;" value="&lt;b&gt;[Nhánh 3: Internal Error – Lệnh hợp lệ nhưng CommandHandler phát sinh ngoại lệ khi thực thi]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="24" width="620" x="61" y="1061" as="geometry" />
+        </mxCell>
+        <mxCell id="58" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#0369a1;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;1.&lt;/b&gt; Nhập dòng lệnh bất kỳ (&lt;code&gt;rawLine&lt;/code&gt;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="200" as="sourcePoint" />
+            <mxPoint x="323" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="59" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#0369a1;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.&lt;/b&gt; Gửi chuỗi qua Socket: &lt;code&gt;write(rawLine + &amp;quot;\n&amp;quot;)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="337" y="240" as="sourcePoint" />
+            <mxPoint x="568" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#15803d;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.&lt;/b&gt; Đọc dòng văn bản: &lt;code&gt;readLine()&lt;/code&gt; → &lt;code&gt;rawLine&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="582" y="280" as="sourcePoint" />
+            <mxPoint x="838" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="61" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#15803d;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;4.&lt;/b&gt; &lt;code&gt;parse(rawLine)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="852" y="320" as="sourcePoint" />
+            <mxPoint x="1143" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="62" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#dc2626;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;1.1.&lt;/b&gt; Phát hiện lỗi cú pháp / rỗng → &lt;code&gt;throws CommandSyntaxException(ERR_SYNTAX, msg)&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;[Đề xuất]&lt;/b&gt;&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1143" y="395" as="sourcePoint" />
+            <mxPoint x="852" y="395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="63" edge="1" parent="1" style="html=1;strokeWidth=1.6;strokeColor=#dc2626;endArrow=block;endFill=1;endSize=6;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="876" y="415" />
+              <mxPoint x="876" y="442" />
+            </Array>
+            <mxPoint x="852" y="415" as="sourcePoint" />
+            <mxPoint x="852" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="64" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=#ffffffdf;fontFamily=Helvetica;fontSize=11;fontColor=#0f172a;align=left;verticalAlign=middle;" value="&lt;b&gt;1.2.&lt;/b&gt; &lt;code&gt;catch (CommandSyntaxException)&lt;/code&gt; tại &lt;code&gt;ClientHandler&lt;/code&gt;" vertex="1">
+          <mxGeometry height="34" width="265" x="882" y="411.5" as="geometry" />
+        </mxCell>
+        <mxCell id="65" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#b45309;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;1.3.&lt;/b&gt; Tạo phản hồi lỗi giao thức: &lt;code&gt;Response.err(ERR_SYNTAX, msg)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="852" y="465" as="sourcePoint" />
+            <mxPoint x="2423" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="66" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#b45309;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;1.4.&lt;/b&gt; Trả về &lt;code&gt;Response(status=ERR, payload=&amp;quot;ERR_SYNTAX &amp;quot; + msg)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2423" y="505" as="sourcePoint" />
+            <mxPoint x="852" y="505" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="67" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#dc2626;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;1.5.&lt;/b&gt; Ghi phản hồi: &lt;code&gt;write(&amp;quot;ERR ERR_SYNTAX &amp;quot; + msg + &amp;quot;\n&amp;quot;)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="838" y="542" as="sourcePoint" />
+            <mxPoint x="582" y="542" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="68" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#dc2626;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;1.6.&lt;/b&gt; &lt;code&gt;readLine()&lt;/code&gt; → &lt;code&gt;&amp;quot;ERR ERR_SYNTAX ...&amp;quot;&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="568" y="580" as="sourcePoint" />
+            <mxPoint x="337" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="69" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#dc2626;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;1.7.&lt;/b&gt; Hiển thị lỗi cú pháp">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="323" y="614" as="sourcePoint" />
+            <mxPoint x="110" y="614" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="70" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#15803d;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.1.&lt;/b&gt; Cú pháp hợp lệ → Trả về &lt;code&gt;Request(command, args)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1143" y="705" as="sourcePoint" />
+            <mxPoint x="852" y="705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="71" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#5b21b6;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.2.&lt;/b&gt; Chuyển Request: &lt;code&gt;dispatch(request)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="852" y="742" as="sourcePoint" />
+            <mxPoint x="1423" y="742" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="72" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#5b21b6;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.3.&lt;/b&gt; Tra cứu Handler: &lt;code&gt;getHandler(command)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1437" y="778" as="sourcePoint" />
+            <mxPoint x="1763" y="778" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="73" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#ea580c;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.4.&lt;/b&gt; Không tìm thấy tên lệnh (&lt;code&gt;Optional.empty()&lt;/code&gt; / &lt;code&gt;null&lt;/code&gt;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1763" y="818" as="sourcePoint" />
+            <mxPoint x="1437" y="818" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="74" edge="1" parent="1" style="html=1;strokeWidth=1.6;strokeColor=#ea580c;endArrow=block;endFill=1;endSize=6;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1461" y="832" />
+              <mxPoint x="1461" y="856" />
+            </Array>
+            <mxPoint x="1437" y="832" as="sourcePoint" />
+            <mxPoint x="1437" y="856" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=#ffffffdf;fontFamily=Helvetica;fontSize=11;fontColor=#0f172a;align=left;verticalAlign=middle;" value="&lt;b&gt;2.5.&lt;/b&gt; Tạo kết quả thất bại với &lt;code&gt;ERR_UNKNOWN_COMMAND&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;[Đề xuất: KetQua.ThatBai]&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="34" width="310" x="1467" y="827" as="geometry" />
+        </mxCell>
+        <mxCell id="76" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#ea580c;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.6.&lt;/b&gt; Trả kết quả lỗi nghiệp vụ (&lt;code&gt;ERR_UNKNOWN_COMMAND, msg&lt;/code&gt;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1423" y="875" as="sourcePoint" />
+            <mxPoint x="852" y="875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="77" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#b45309;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.7.&lt;/b&gt; Chuyển thành Response giao thức: &lt;code&gt;Response.err(ERR_UNKNOWN_COMMAND, msg)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="852" y="910" as="sourcePoint" />
+            <mxPoint x="2423" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="78" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#b45309;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.8.&lt;/b&gt; Trả về &lt;code&gt;Response(status=ERR, payload=&amp;quot;ERR_UNKNOWN_COMMAND &amp;quot; + msg)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2423" y="948" as="sourcePoint" />
+            <mxPoint x="852" y="948" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="79" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#ea580c;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.9.&lt;/b&gt; Ghi: &lt;code&gt;write(&amp;quot;ERR ERR_UNKNOWN_COMMAND &amp;quot; + msg + &amp;quot;\n&amp;quot;)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="838" y="980" as="sourcePoint" />
+            <mxPoint x="582" y="980" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="80" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#ea580c;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.10.&lt;/b&gt; &lt;code&gt;readLine()&lt;/code&gt; → &lt;code&gt;&amp;quot;ERR ERR_UNKNOWN_COMMAND ...&amp;quot;&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="568" y="1012" as="sourcePoint" />
+            <mxPoint x="337" y="1012" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="81" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#ea580c;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;2.11.&lt;/b&gt; Hiển thị lỗi lệnh không tồn tại">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="323" y="1040" as="sourcePoint" />
+            <mxPoint x="110" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="82" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#15803d;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.1.&lt;/b&gt; Cú pháp hợp lệ → Trả về &lt;code&gt;Request(command, args)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1143" y="1122" as="sourcePoint" />
+            <mxPoint x="852" y="1122" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="83" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#5b21b6;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.2.&lt;/b&gt; Chuyển Request: &lt;code&gt;dispatch(request)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="852" y="1158" as="sourcePoint" />
+            <mxPoint x="1423" y="1158" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="84" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#5b21b6;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.3.&lt;/b&gt; Tra cứu Handler: &lt;code&gt;getHandler(command)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1437" y="1192" as="sourcePoint" />
+            <mxPoint x="1763" y="1192" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="85" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#5b21b6;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.4.&lt;/b&gt; Trả về &lt;code&gt;CommandHandler&lt;/code&gt; hợp lệ (&lt;code&gt;Function&amp;lt;String, String&amp;gt;&lt;/code&gt;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1763" y="1228" as="sourcePoint" />
+            <mxPoint x="1437" y="1228" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="86" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#5b21b6;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.5.&lt;/b&gt; Thực thi nghiệp vụ: &lt;code&gt;handler.apply(args)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1437" y="1262" as="sourcePoint" />
+            <mxPoint x="2103" y="1262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="87" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#dc2626;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.6.&lt;/b&gt; Phát sinh ngoại lệ không mong muốn (&lt;code&gt;throws RuntimeException&lt;/code&gt;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2103" y="1304" as="sourcePoint" />
+            <mxPoint x="1437" y="1304" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="88" edge="1" parent="1" style="html=1;strokeWidth=1.6;strokeColor=#9333ea;endArrow=block;endFill=1;endSize=6;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1461" y="1320" />
+              <mxPoint x="1461" y="1344" />
+            </Array>
+            <mxPoint x="1437" y="1320" as="sourcePoint" />
+            <mxPoint x="1437" y="1344" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="89" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=#ffffffdf;fontFamily=Helvetica;fontSize=11;fontColor=#0f172a;align=left;verticalAlign=middle;" value="&lt;b&gt;3.7.&lt;/b&gt; &lt;code&gt;catch (Exception)&lt;/code&gt; → Chuyển thành lỗi &lt;code&gt;ERR_INTERNAL&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;[Đề xuất: KetQua.ThatBai]&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="34" width="310" x="1467" y="1315" as="geometry" />
+        </mxCell>
+        <mxCell id="90" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#9333ea;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.8.&lt;/b&gt; Trả kết quả lỗi nội bộ (&lt;code&gt;ERR_INTERNAL, msg&lt;/code&gt;) [Không làm sập luồng]">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1423" y="1365" as="sourcePoint" />
+            <mxPoint x="852" y="1365" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="91" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#b45309;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.9.&lt;/b&gt; Tạo Response lỗi: &lt;code&gt;Response.err(ERR_INTERNAL, msg)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="852" y="1396" as="sourcePoint" />
+            <mxPoint x="2423" y="1396" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="92" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#b45309;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.10.&lt;/b&gt; Trả về &lt;code&gt;Response(status=ERR, payload=&amp;quot;ERR_INTERNAL &amp;quot; + msg)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2423" y="1434" as="sourcePoint" />
+            <mxPoint x="852" y="1434" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="93" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#9333ea;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.11.&lt;/b&gt; Ghi: &lt;code&gt;write(&amp;quot;ERR ERR_INTERNAL &amp;quot; + msg + &amp;quot;\n&amp;quot;)&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="838" y="1465" as="sourcePoint" />
+            <mxPoint x="582" y="1465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="94" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#9333ea;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.12.&lt;/b&gt; &lt;code&gt;readLine()&lt;/code&gt; → &lt;code&gt;&amp;quot;ERR ERR_INTERNAL ...&amp;quot;&lt;/code&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="568" y="1498" as="sourcePoint" />
+            <mxPoint x="337" y="1498" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="95" edge="1" parent="1" style="html=1;strokeWidth=1.8;strokeColor=#9333ea;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" value="&lt;b&gt;3.13.&lt;/b&gt; Hiển thị lỗi nội bộ">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="323" y="1525" as="sourcePoint" />
+            <mxPoint x="110" y="1525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="96" parent="1" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;strokeWidth=1.6;fontColor=#14532d;fontFamily=Helvetica;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;✔ BẢO TOÀN KẾT NỐI &amp;amp; LUỒNG PHỤC VỤ:&lt;/b&gt; Sau khi gửi phản hồi chuẩn &lt;code&gt;ERR &amp;lt;ERROR_CODE&amp;gt; &amp;lt;MESSAGE&amp;gt;&lt;/code&gt; ở bất kỳ nhánh nào, &lt;code&gt;Socket&lt;/code&gt; vẫn duy trì mở và &lt;code&gt;ClientHandler&lt;/code&gt; tiếp tục vòng lặp &lt;code&gt;readLine()&lt;/code&gt; phục vụ lệnh tiếp theo (không dừng kết nối hay crash Server)." vertex="1">
+          <mxGeometry height="38" width="1950" x="280" y="1555" as="geometry" />
+        </mxCell>
+        <mxCell id="97" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=middle;align=left;spacingLeft=14;spacingRight=14;" value="&lt;b&gt;GHI CHÚ KỸ THUẬT &amp;amp; PHÂN ĐỊNH TRÁCH NHIỆM:&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Phân biệt 3 điểm phát sinh &amp;amp; bắt lỗi:&lt;/b&gt; (1) &lt;i&gt;Syntax Error&lt;/i&gt; phát sinh tại &lt;code&gt;ProtocolParser&lt;/code&gt;, bắt tại &lt;code&gt;ClientHandler&lt;/code&gt; → &lt;code&gt;ERR_SYNTAX&lt;/code&gt;; (2) &lt;i&gt;Unknown Command&lt;/i&gt; phát hiện tại &lt;code&gt;CommandRegistry&lt;/code&gt;, xử lý tại &lt;code&gt;CommandDispatcher&lt;/code&gt; → &lt;code&gt;ERR_UNKNOWN_COMMAND&lt;/code&gt;; (3) &lt;i&gt;Internal Error&lt;/i&gt; phát sinh tại &lt;code&gt;CommandHandler.apply()&lt;/code&gt;, bắt an toàn tại &lt;code&gt;CommandDispatcher&lt;/code&gt; → &lt;code&gt;ERR_INTERNAL&lt;/code&gt;.&lt;br&gt;• &lt;b&gt;Tách biệt &lt;code&gt;Response&lt;/code&gt; và &lt;code&gt;KetQua&lt;/code&gt;:&lt;/b&gt; &lt;code&gt;Response&lt;/code&gt; thuộc &lt;b&gt;Tầng Giao thức Mạng&lt;/b&gt; (đóng gói chuỗi &lt;code&gt;ERR &amp;lt;ERROR_CODE&amp;gt; &amp;lt;MESSAGE&amp;gt;&lt;/code&gt; gửi qua Socket); trong khi &lt;code&gt;KetQua&lt;/code&gt; (&lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;[Đề xuất]&lt;/b&gt;&lt;/font&gt;) thuộc &lt;b&gt;Tầng Nghiệp vụ nội bộ&lt;/b&gt;. Phương án &lt;code&gt;CommandException extends RuntimeException&lt;/code&gt; (&lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;[Đề xuất]&lt;/b&gt;&lt;/font&gt;) giúp tương thích chữ ký &lt;code&gt;Function&amp;lt;String, String&amp;gt;&lt;/code&gt; và đang chờ nhóm thống nhất chính thức." vertex="1">
+          <mxGeometry height="96" width="2570" x="25" y="1632" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
