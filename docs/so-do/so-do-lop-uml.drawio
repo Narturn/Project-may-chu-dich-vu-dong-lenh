@@ -1,0 +1,684 @@
+<mxfile host="Electron">
+  <diagram id="uml_class_diagram" name="UML Class Diagram">
+    <mxGraphModel dx="1188" dy="725" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="0" pageScale="1" pageWidth="2680" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="11" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#0284c7;strokeWidth=2;fontColor=#ffffff;fontFamily=Helvetica;fontSize=16;verticalAlign=middle;align=center;" value="&lt;b&gt;SƠ ĐỒ LỚP CHI TIẾT TOÀN HỆ THỐNG (UML CLASS DIAGRAM)&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:12.5px;font-weight:normal;&#39; color=&#39;#cbd5e1&#39;&gt;Hệ thống Máy chủ Dịch vụ Dòng lệnh – Học phần AJP201 (Đề tài 31) &amp;nbsp;|&amp;nbsp; Phân tách 4 Package: &lt;code&gt;mang&lt;/code&gt; (Mạng) &amp;bull; &lt;code&gt;giaothuc&lt;/code&gt; (Giao thức) &amp;bull; &lt;code&gt;nghiepvu&lt;/code&gt; (Nghiệp vụ &amp;amp; Điều phối) &amp;bull; &lt;code&gt;luutru&lt;/code&gt; (Lưu trữ CSV)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="54" width="2630" x="25" y="12" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#f0f9ff;strokeColor=#0284c7;strokeWidth=2;verticalAlign=top;align=left;spacingTop=8;spacingLeft=14;fontFamily=Helvetica;fontSize=12;fontColor=#0369a1;" value="&lt;b&gt;&lt;i&gt;Tầng Giao tiếp &amp;amp; Mạng (Network &amp;amp; Presentation Layer – F05, F11): Tiếp nhận kết nối TCP, quản lý phiên Worker &amp;amp; Console Client&lt;/i&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="699" width="990" x="25" y="106" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#0284c7;strokeColor=#0284c7;strokeWidth=1.5;verticalAlign=middle;align=left;spacingLeft=12;fontFamily=Helvetica;fontSize=13;fontStyle=1;fontColor=#ffffff;" value="package mang" vertex="1">
+          <mxGeometry height="28" width="320" x="25" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#f5f3ff;strokeColor=#7c3aed;strokeWidth=2;verticalAlign=top;align=left;spacingTop=8;spacingLeft=14;fontFamily=Helvetica;fontSize=12;fontColor=#4c1d95;" value="&lt;b&gt;&lt;i&gt;Tầng Phân tích &amp;amp; Giao thức (Protocol &amp;amp; Shared Models – F01, F02, F03, F10): Phân tích cú pháp dòng lệnh, bản tin giao thức, mã lỗi &amp;amp; ngoại lệ&lt;/i&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="757" width="990" x="25" y="878" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#7c3aed;strokeColor=#7c3aed;strokeWidth=1.5;verticalAlign=middle;align=left;spacingLeft=12;fontFamily=Helvetica;fontSize=13;fontStyle=1;fontColor=#ffffff;" value="package giaothuc" vertex="1">
+          <mxGeometry height="28" width="320" x="25" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=2;verticalAlign=top;align=left;spacingTop=8;spacingLeft=14;fontFamily=Helvetica;fontSize=12;fontColor=#14532d;" value="&lt;b&gt;&lt;i&gt;Tầng Nghiệp vụ &amp;amp; Điều phối (Business &amp;amp; Dispatching Layer – F04, F06–F09, F13–F16): Độc lập hạ tầng mạng/lưu trữ, kiểm thử đơn vị độc lập (TC3 mức 3–4)&lt;/i&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="1154" width="1550" x="1105" y="106" as="geometry" />
+        </mxCell>
+        <mxCell id="17" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#16a34a;strokeColor=#16a34a;strokeWidth=1.5;verticalAlign=middle;align=left;spacingLeft=12;fontFamily=Helvetica;fontSize=13;fontStyle=1;fontColor=#ffffff;" value="package nghiepvu" vertex="1">
+          <mxGeometry height="28" width="320" x="1105" y="78" as="geometry" />
+        </mxCell>
+        <mxCell id="18" parent="1" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#fff7ed;strokeColor=#ea580c;strokeWidth=2;verticalAlign=top;align=left;spacingTop=8;spacingLeft=14;fontFamily=Helvetica;fontSize=12;fontColor=#9a3412;" value="&lt;b&gt;&lt;i&gt;Tầng Lưu trữ (Persistence Layer – F12) [ĐỀ XUẤT: Tách riêng I/O CSV - CHỜ NHÓM DUYỆT]&lt;/i&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="327" width="670" x="1105" y="1308" as="geometry" />
+        </mxCell>
+        <mxCell id="19" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#ea580c;strokeColor=#ea580c;strokeWidth=1.5;verticalAlign=middle;align=left;spacingLeft=12;fontFamily=Helvetica;fontSize=13;fontStyle=1;fontColor=#ffffff;" value="package luutru" vertex="1">
+          <mxGeometry height="28" width="320" x="1105" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0284c7;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="295" width="425" x="45" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bae6fd;strokeColor=#0284c7;strokeWidth=1.5;fontColor=#0c4a6e;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;CommandServer&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[ĐỀ XUẤT: Dùng ExecutorService + setSoTimeout - CHỜ NHÓM DUYỆT]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="425" x="45" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0284c7;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- port : &lt;code&gt;int&lt;/code&gt;&lt;br&gt;- isRunning : &lt;code&gt;volatile boolean&lt;/code&gt;&lt;br&gt;- serverSocket : &lt;code&gt;ServerSocket&lt;/code&gt;&lt;br&gt;- threadPool : &lt;code&gt;ExecutorService&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;i&gt;[Đề xuất P.Án 4B]&lt;/i&gt;&lt;/font&gt;&lt;br&gt;- soTimeoutMillis : &lt;code&gt;int&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;i&gt;[Đề xuất: 60_000ms]&lt;/i&gt;&lt;/font&gt;&lt;br&gt;- dispatcher : &lt;code&gt;CommandDispatcher&lt;/code&gt;&lt;br&gt;- metrics : &lt;code&gt;MetricsCollector&lt;/code&gt;&lt;br&gt;- repository : &lt;code&gt;MetricsRepository&lt;/code&gt;" vertex="1">
+          <mxGeometry height="164" width="425" x="45" y="196" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0284c7;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ CommandServer(port: int, dispatcher: CommandDispatcher, ...)&lt;br&gt;+ start() : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;+ stop() : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;- registerShutdownHook() : &lt;code&gt;void&lt;/code&gt;" vertex="1">
+          <mxGeometry height="83" width="425" x="45" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="100" width="290" x="620" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e2e8f0;strokeColor=#475569;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;interface&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;java.lang.Runnable&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="290" x="620" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#475569;strokeWidth=1.2;fontColor=#94a3b8;fontFamily=Helvetica;fontSize=11;verticalAlign=middle;align=left;spacingLeft=8;" value="&lt;i&gt;(không có thuộc tính)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="28" width="290" x="620" y="196" as="geometry" />
+        </mxCell>
+        <mxCell id="27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#475569;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ run() : &lt;code&gt;void&lt;/code&gt;" vertex="1">
+          <mxGeometry height="24" width="290" x="620" y="224" as="geometry" />
+        </mxCell>
+        <mxCell id="28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0284c7;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="305" width="450" x="545" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bae6fd;strokeColor=#0284c7;strokeWidth=1.5;fontColor=#0c4a6e;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;ClientHandler&lt;/div&gt;" vertex="1">
+          <mxGeometry height="32" width="450" x="545" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0284c7;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- clientSocket : &lt;code&gt;Socket&lt;/code&gt;&lt;br&gt;- reader : &lt;code&gt;BufferedReader&lt;/code&gt;&lt;br&gt;- writer : &lt;code&gt;PrintWriter&lt;/code&gt;&lt;br&gt;- parser : &lt;code&gt;ProtocolParser&lt;/code&gt;&lt;br&gt;- dispatcher : &lt;code&gt;CommandDispatcher&lt;/code&gt;&lt;br&gt;- metrics : &lt;code&gt;MetricsCollector&lt;/code&gt;&lt;br&gt;- sessionHistory : &lt;code&gt;SessionHistoryManager&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;i&gt;[Mở rộng F14]&lt;/i&gt;&lt;/font&gt;&lt;br&gt;- rateLimiter : &lt;code&gt;RateLimiter&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;i&gt;[Mở rộng F15]&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="182" width="450" x="545" y="322" as="geometry" />
+        </mxCell>
+        <mxCell id="31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0284c7;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ ClientHandler(socket: Socket, dispatcher: CommandDispatcher, ...)&lt;br&gt;+ run() : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;- processCommandLine(rawLine: String) : &lt;code&gt;Response&lt;/code&gt;&lt;br&gt;- sendResponse(response: Response) : &lt;code&gt;void&lt;/code&gt;" vertex="1">
+          <mxGeometry height="91" width="450" x="545" y="504" as="geometry" />
+        </mxCell>
+        <mxCell id="32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0284c7;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="250" width="425" x="45" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bae6fd;strokeColor=#0284c7;strokeWidth=1.5;fontColor=#0c4a6e;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;ConsoleClient&lt;/div&gt;" vertex="1">
+          <mxGeometry height="32" width="425" x="45" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0284c7;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- host : &lt;code&gt;String&lt;/code&gt;&lt;br&gt;- port : &lt;code&gt;int&lt;/code&gt;&lt;br&gt;- socket : &lt;code&gt;Socket&lt;/code&gt;&lt;br&gt;- reader : &lt;code&gt;BufferedReader&lt;/code&gt;&lt;br&gt;- writer : &lt;code&gt;PrintWriter&lt;/code&gt;" vertex="1">
+          <mxGeometry height="109" width="425" x="45" y="557" as="geometry" />
+        </mxCell>
+        <mxCell id="35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#0284c7;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ ConsoleClient(host: String, port: int)&lt;br&gt;+ connect() : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;+ sendRequest(rawLine: String) : &lt;code&gt;String&lt;/code&gt;&lt;br&gt;+ startInteractiveLoop() : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;+ disconnect() : &lt;code&gt;void&lt;/code&gt;" vertex="1">
+          <mxGeometry height="109" width="425" x="45" y="666" as="geometry" />
+        </mxCell>
+        <mxCell id="36" parent="1" style="shape=note;size=15;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#881337;fontFamily=Helvetica;fontSize=11.5;verticalAlign=middle;align=left;spacingLeft=10;spacingRight=8;" value="&lt;b&gt;Quyết định kỹ thuật #4 [ĐỀ XUẤT - CHỜ NHÓM DUYỆT]:&lt;/b&gt;&lt;br&gt;&amp;bull; &lt;b&gt;Phương án 4A:&lt;/b&gt; &lt;code&gt;Thread-per-connection&lt;/code&gt; (&lt;code&gt;new Thread(handler).start()&lt;/code&gt;).&lt;br&gt;&amp;bull; &lt;b&gt;Phương án 4B [Khuyến nghị]:&lt;/b&gt; &lt;code&gt;Executors.newFixedThreadPool(10)&lt;/code&gt; kết hợp &lt;code&gt;clientSocket.setSoTimeout(60_000)&lt;/code&gt;.&lt;br&gt;&amp;bull; &lt;i&gt;Lưu ý hàng đợi:&lt;/i&gt; Pool cố định giới hạn 10 worker chạy đồng thời; kết nối thứ 11+ xếp vào &lt;code&gt;LinkedBlockingQueue&lt;/code&gt; chờ worker rảnh." vertex="1">
+          <mxGeometry height="165" width="450" x="545" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="145" width="395" x="45" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ddd6fe;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#3b0764;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;ProtocolParser&lt;/div&gt;" vertex="1">
+          <mxGeometry height="32" width="395" x="45" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#7c3aed;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ MAX_LINE_LENGTH : &lt;code&gt;int = 4096&lt;/code&gt; &lt;i&gt;{static, final}&lt;/i&gt;" vertex="1">
+          <mxGeometry height="37" width="395" x="45" y="952" as="geometry" />
+        </mxCell>
+        <mxCell id="40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#7c3aed;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ parse(rawLine: String) : &lt;code&gt;Request&lt;/code&gt;&lt;br&gt;- normalize(rawLine: String) : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="76" width="395" x="45" y="989" as="geometry" />
+        </mxCell>
+        <mxCell id="41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="165" width="460" x="535" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ddd6fe;strokeColor=#7c3aed;strokeWidth=1.5;fontColor=#3b0764;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;record&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;Request&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="460" x="535" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#7c3aed;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ command : &lt;code&gt;String&lt;/code&gt;&lt;br&gt;+ arguments : &lt;code&gt;String&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(alias: args() trong Sequence/Flowchart)&lt;/i&gt;&lt;/font&gt;&lt;br&gt;+ timestamp : &lt;code&gt;LocalDateTime&lt;/code&gt;" vertex="1">
+          <mxGeometry height="70" width="460" x="535" y="968" as="geometry" />
+        </mxCell>
+        <mxCell id="44" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#7c3aed;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ Request(command: String, arguments: String, timestamp: LocalDateTime)&lt;br&gt;+ of(command: String, arguments: String) : &lt;code&gt;Request&lt;/code&gt; &lt;i&gt;{static}&lt;/i&gt;" vertex="1">
+          <mxGeometry height="47" width="460" x="535" y="1038" as="geometry" />
+        </mxCell>
+        <mxCell id="45" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7c3aed;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="235" width="440" x="45" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ddd6fe;strokeColor=#7c3aed;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#3b0764;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;record&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;Response&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[ĐỀ XUẤT: Bản tin Giao thức Mạng tách biệt với KetQua - CHỜ NHÓM DUYỆT]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="64" width="440" x="45" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#7c3aed;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ status : &lt;code&gt;StatusCode&lt;/code&gt;&lt;br&gt;+ payload : &lt;code&gt;String&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(dữ liệu kết quả hoặc thông điệp lỗi)&lt;/i&gt;&lt;/font&gt;&lt;br&gt;+ errorCode : &lt;code&gt;ErrorCode&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(null khi status == OK)&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="73" width="440" x="45" y="1194" as="geometry" />
+        </mxCell>
+        <mxCell id="48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#7c3aed;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ ok(data: String) : &lt;code&gt;Response&lt;/code&gt; &lt;i&gt;{static}&lt;/i&gt;&lt;br&gt;+ err(code: ErrorCode, msg: String) : &lt;code&gt;Response&lt;/code&gt; &lt;i&gt;{static}&lt;/i&gt;&lt;br&gt;+ fromKetQua(ketQua: KetQua) : &lt;code&gt;Response&lt;/code&gt; &lt;i&gt;{static}&lt;/i&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;i&gt;[Đề xuất]&lt;/i&gt;&lt;/font&gt;&lt;br&gt;+ toProtocolString() : &lt;code&gt;String&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(&quot;OK ...&quot; / &quot;ERR ...&quot;)&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="98" width="440" x="45" y="1267" as="geometry" />
+        </mxCell>
+        <mxCell id="49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ca8a04;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="190" width="220" x="45" y="1415" as="geometry" />
+        </mxCell>
+        <mxCell id="50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fef08a;strokeColor=#ca8a04;strokeWidth=1.5;fontColor=#713f12;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;enumeration&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;StatusCode&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="220" x="45" y="1415" as="geometry" />
+        </mxCell>
+        <mxCell id="51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ca8a04;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ OK&lt;br&gt;+ ERR" vertex="1">
+          <mxGeometry height="94" width="220" x="45" y="1463" as="geometry" />
+        </mxCell>
+        <mxCell id="52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ca8a04;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ code() : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="48" width="220" x="45" y="1557" as="geometry" />
+        </mxCell>
+        <mxCell id="53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ca8a04;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="195" width="340" x="295" y="1415" as="geometry" />
+        </mxCell>
+        <mxCell id="54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fef08a;strokeColor=#ca8a04;strokeWidth=1.5;fontColor=#713f12;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;enumeration&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;ErrorCode&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="340" x="295" y="1415" as="geometry" />
+        </mxCell>
+        <mxCell id="55" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ca8a04;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ ERR_UNKNOWN_COMMAND&lt;br&gt;+ ERR_SYNTAX&lt;br&gt;+ ERR_INVALID_ARGUMENT&lt;br&gt;+ ERR_INTERNAL&lt;br&gt;+ ERR_RATE_LIMIT &lt;font color=&#39;#be185d&#39;&gt;&lt;i&gt;[Cần chốt tên mã F15]&lt;/i&gt;&lt;/font&gt;&lt;br&gt;- defaultMessage : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="99" width="340" x="295" y="1463" as="geometry" />
+        </mxCell>
+        <mxCell id="56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ca8a04;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ getDefaultMessage() : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="48" width="340" x="295" y="1562" as="geometry" />
+        </mxCell>
+        <mxCell id="57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="100" width="315" x="680" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e2e8f0;strokeColor=#475569;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;class&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;java.lang.RuntimeException&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="315" x="680" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="59" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#475569;strokeWidth=1.2;fontColor=#94a3b8;fontFamily=Helvetica;fontSize=11;verticalAlign=middle;align=left;spacingLeft=8;" value="&lt;i&gt;(không có thuộc tính)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="28" width="315" x="680" y="1178" as="geometry" />
+        </mxCell>
+        <mxCell id="60" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#475569;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ getMessage() : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="24" width="315" x="680" y="1206" as="geometry" />
+        </mxCell>
+        <mxCell id="61" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e11d48;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="220" width="330" x="665" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fecdd3;strokeColor=#e11d48;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#881337;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;CommandException&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[ĐỀ XUẤT: extends RuntimeException - CHỜ NHÓM DUYỆT]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="330" x="665" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e11d48;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- errorCode : &lt;code&gt;ErrorCode&lt;/code&gt;" vertex="1">
+          <mxGeometry height="55" width="330" x="665" y="1328" as="geometry" />
+        </mxCell>
+        <mxCell id="64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e11d48;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ CommandException(code: ErrorCode, msg: String)&lt;br&gt;+ CommandException(code: ErrorCode, msg: String, cause: Throwable)&lt;br&gt;+ getErrorCode() : &lt;code&gt;ErrorCode&lt;/code&gt;" vertex="1">
+          <mxGeometry height="117" width="330" x="665" y="1383" as="geometry" />
+        </mxCell>
+        <mxCell id="65" parent="1" style="shape=note;size=15;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.5;fontColor=#881337;fontFamily=Helvetica;fontSize=11.5;verticalAlign=middle;align=left;spacingLeft=10;spacingRight=8;" value="&lt;b&gt;Ghi chú đồng bộ Ngoại lệ (Quyết định #1):&lt;/b&gt;&lt;br&gt;Sơ đồ tuần tự 3 dùng tên &lt;code&gt;CommandSyntaxException&lt;/code&gt; cho nhánh lỗi cú pháp; có thể kế thừa từ &lt;code&gt;CommandException&lt;/code&gt; hoặc dùng trực tiếp &lt;code&gt;CommandException(ERR_SYNTAX, msg)&lt;/code&gt;." vertex="1">
+          <mxGeometry height="98" width="330" x="665" y="1512" as="geometry" />
+        </mxCell>
+        <mxCell id="66" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="215" width="430" x="1125" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="67" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.5;fontColor=#14532d;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;CommandDispatcher&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[ĐỀ XUẤT: Trả về KetQua nội bộ - CHỜ NHÓM DUYỆT]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="430" x="1125" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="68" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- registry : &lt;code&gt;CommandRegistry&lt;/code&gt;&lt;br&gt;- metrics : &lt;code&gt;MetricsCollector&lt;/code&gt;" vertex="1">
+          <mxGeometry height="66" width="430" x="1125" y="196" as="geometry" />
+        </mxCell>
+        <mxCell id="69" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ CommandDispatcher(registry: CommandRegistry, metrics: MetricsCollector)&lt;br&gt;+ dispatch(request: Request) : &lt;code&gt;KetQua&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;i&gt;[Đề xuất P.Án 2B]&lt;/i&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(hoặc execute(request: Request) : Response theo P.Án 2A)&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="101" width="430" x="1125" y="262" as="geometry" />
+        </mxCell>
+        <mxCell id="70" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e11d48;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="125" width="430" x="1125" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fecdd3;strokeColor=#e11d48;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#881337;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;sealed interface&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;KetQua&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[ĐỀ XUẤT: Mô hình kết quả nội bộ tầng Nghiệp vụ - CHỜ NHÓM DUYỆT]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="64" width="430" x="1125" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e11d48;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="&lt;i&gt;permits&lt;/i&gt; &lt;code&gt;KetQua.ThanhCong&lt;/code&gt;, &lt;code&gt;KetQua.ThatBai&lt;/code&gt;" vertex="1">
+          <mxGeometry height="61" width="430" x="1125" y="484" as="geometry" />
+        </mxCell>
+        <mxCell id="73" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e11d48;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="130" width="205" x="1125" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="74" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fecdd3;strokeColor=#e11d48;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#881337;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;record&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;KetQua.ThanhCong&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="205" x="1125" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="75" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e11d48;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ duLieu : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="41" width="205" x="1125" y="643" as="geometry" />
+        </mxCell>
+        <mxCell id="76" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e11d48;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ ThanhCong(duLieu: String)" vertex="1">
+          <mxGeometry height="41" width="205" x="1125" y="684" as="geometry" />
+        </mxCell>
+        <mxCell id="77" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e11d48;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="130" width="205" x="1350" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="78" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fecdd3;strokeColor=#e11d48;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#881337;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;record&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;KetQua.ThatBai&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="205" x="1350" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="79" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e11d48;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ maLoi : &lt;code&gt;ErrorCode&lt;/code&gt;&lt;br&gt;+ thongDiep : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="54" width="205" x="1350" y="643" as="geometry" />
+        </mxCell>
+        <mxCell id="80" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e11d48;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ ThatBai(maLoi: ErrorCode, ...)" vertex="1">
+          <mxGeometry height="28" width="205" x="1350" y="697" as="geometry" />
+        </mxCell>
+        <mxCell id="81" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="195" width="450" x="1610" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="82" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.5;fontColor=#14532d;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;CommandRegistry&lt;/div&gt;" vertex="1">
+          <mxGeometry height="32" width="450" x="1610" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="83" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- handlers : &lt;code&gt;Map&amp;lt;String, Function&amp;lt;String, String&amp;gt;&amp;gt;&lt;/code&gt;" vertex="1">
+          <mxGeometry height="52" width="450" x="1610" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="84" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ CommandRegistry()&lt;br&gt;+ register(cmd: String, handler: Function&amp;lt;String, String&amp;gt;) : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;+ getHandler(cmd: String) : &lt;code&gt;Optional&amp;lt;Function&amp;lt;String, String&amp;gt;&amp;gt;&lt;/code&gt;&lt;br&gt;+ getSupportedCommands() : &lt;code&gt;Set&amp;lt;String&amp;gt;&lt;/code&gt;" vertex="1">
+          <mxGeometry height="111" width="450" x="1610" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="85" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#475569;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="130" width="505" x="2130" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="86" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e2e8f0;strokeColor=#475569;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;FunctionalInterface&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;java.util.function.Function&amp;lt;String, String&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="505" x="2130" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="87" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#475569;strokeWidth=1.2;fontColor=#94a3b8;fontFamily=Helvetica;fontSize=11;verticalAlign=middle;align=left;spacingLeft=8;" value="&lt;i&gt;(không có thuộc tính)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="28" width="505" x="2130" y="196" as="geometry" />
+        </mxCell>
+        <mxCell id="88" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#475569;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ apply(args: String) : &lt;code&gt;String&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(không khai báo checked exception)&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="54" width="505" x="2130" y="224" as="geometry" />
+        </mxCell>
+        <mxCell id="89" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="160" width="230" x="1915" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="90" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.5;fontColor=#14532d;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;TimeHandler&lt;/div&gt;" vertex="1">
+          <mxGeometry height="32" width="230" x="1915" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="91" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- TIME_FMT : &lt;code&gt;DateTimeFormatter&lt;/code&gt;&lt;br&gt;- DATE_FMT : &lt;code&gt;DateTimeFormatter&lt;/code&gt;" vertex="1">
+          <mxGeometry height="51" width="230" x="1915" y="387" as="geometry" />
+        </mxCell>
+        <mxCell id="92" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ handleTime(args: String) : &lt;code&gt;String&lt;/code&gt;&lt;br&gt;+ handleDate(args: String) : &lt;code&gt;String&lt;/code&gt;&lt;br&gt;+ apply(args: String) : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="77" width="230" x="1915" y="438" as="geometry" />
+        </mxCell>
+        <mxCell id="93" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="160" width="225" x="2165" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="94" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.5;fontColor=#14532d;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;EchoHandler&lt;/div&gt;" vertex="1">
+          <mxGeometry height="32" width="225" x="2165" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="95" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#94a3b8;fontFamily=Helvetica;fontSize=11;verticalAlign=middle;align=left;spacingLeft=8;" value="&lt;i&gt;(không có thuộc tính)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="28" width="225" x="2165" y="387" as="geometry" />
+        </mxCell>
+        <mxCell id="96" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ apply(args: String) : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="100" width="225" x="2165" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="97" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="160" width="225" x="2410" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="98" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.5;fontColor=#14532d;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;UpperHandler&lt;/div&gt;" vertex="1">
+          <mxGeometry height="32" width="225" x="2410" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="99" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#94a3b8;fontFamily=Helvetica;fontSize=11;verticalAlign=middle;align=left;spacingLeft=8;" value="&lt;i&gt;(không có thuộc tính)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="28" width="225" x="2410" y="387" as="geometry" />
+        </mxCell>
+        <mxCell id="100" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ apply(args: String) : &lt;code&gt;String&lt;/code&gt;&lt;br&gt;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(ném CommandException nếu rỗng)&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="225" x="2410" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="101" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="175" width="230" x="1915" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="102" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.5;fontColor=#14532d;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;StatsHandler&lt;/div&gt;" vertex="1">
+          <mxGeometry height="32" width="230" x="1915" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="103" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- metrics : &lt;code&gt;MetricsCollector&lt;/code&gt;" vertex="1">
+          <mxGeometry height="45" width="230" x="1915" y="582" as="geometry" />
+        </mxCell>
+        <mxCell id="104" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ StatsHandler(metrics: MetricsCollector)&lt;br&gt;+ apply(args: String) : &lt;code&gt;String&lt;/code&gt;&lt;br&gt;- formatWithStreams(snap: MetricsSnapshot) : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="98" width="230" x="1915" y="627" as="geometry" />
+        </mxCell>
+        <mxCell id="105" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#db2777;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="175" width="225" x="2165" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="106" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#831843;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;CalcHandler&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[Mở rộng F13 – Biểu thức CALC]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="225" x="2165" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="107" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#db2777;strokeWidth=1.2;fontColor=#94a3b8;fontFamily=Helvetica;fontSize=11;verticalAlign=middle;align=left;spacingLeft=8;" value="&lt;i&gt;(không có thuộc tính)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="28" width="225" x="2165" y="598" as="geometry" />
+        </mxCell>
+        <mxCell id="108" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#db2777;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ apply(expr: String) : &lt;code&gt;String&lt;/code&gt;&lt;br&gt;- evaluatePostfix(expr: String) : &lt;code&gt;double&lt;/code&gt;" vertex="1">
+          <mxGeometry height="99" width="225" x="2165" y="626" as="geometry" />
+        </mxCell>
+        <mxCell id="109" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#db2777;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="175" width="225" x="2410" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="110" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#831843;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;HelpHandler&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[Mở rộng F16 – Trợ giúp HELP]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="225" x="2410" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="111" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#db2777;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- registry : &lt;code&gt;CommandRegistry&lt;/code&gt;" vertex="1">
+          <mxGeometry height="42" width="225" x="2410" y="598" as="geometry" />
+        </mxCell>
+        <mxCell id="112" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#db2777;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ HelpHandler(registry: CommandRegistry)&lt;br&gt;+ apply(args: String) : &lt;code&gt;String&lt;/code&gt;" vertex="1">
+          <mxGeometry height="85" width="225" x="2410" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="113" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="260" width="505" x="1125" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="114" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#bbf7d0;strokeColor=#16a34a;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#14532d;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;MetricsCollector&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[ĐỀ XUẤT: Đặt tại package nghiepvu - CHỜ NHÓM DUYỆT]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="505" x="1125" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="115" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- totalConnections : &lt;code&gt;AtomicInteger&lt;/code&gt;&lt;br&gt;- activeConnections : &lt;code&gt;AtomicInteger&lt;/code&gt;&lt;br&gt;- commandCounters : &lt;code&gt;ConcurrentHashMap&amp;lt;String, AtomicInteger&amp;gt;&lt;/code&gt;" vertex="1">
+          <mxGeometry height="70" width="505" x="1125" y="858" as="geometry" />
+        </mxCell>
+        <mxCell id="116" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#16a34a;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ incrementConnection() : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;+ decrementActiveConnection() : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;+ recordCommand(commandName: String) : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;+ getMetricsSummary() : &lt;code&gt;String&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(Streams API pipeline)&lt;/i&gt;&lt;/font&gt;&lt;br&gt;+ exportSnapshot() : &lt;code&gt;MetricsSnapshot&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;i&gt;[Đề xuất: hoặc getSnapshot()]&lt;/i&gt;&lt;/font&gt;&lt;br&gt;+ restoreFromSnapshot(snapshot: MetricsSnapshot) : &lt;code&gt;void&lt;/code&gt; &lt;font color=&#39;#be185d&#39;&gt;&lt;i&gt;[Đề xuất]&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="142" width="505" x="1125" y="928" as="geometry" />
+        </mxCell>
+        <mxCell id="117" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e11d48;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="140" width="505" x="1125" y="1105" as="geometry" />
+        </mxCell>
+        <mxCell id="118" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fecdd3;strokeColor=#e11d48;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#881337;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:11px;font-weight:normal;&#39;&gt;&amp;laquo;record&amp;raquo;&lt;/div&gt;&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;MetricsSnapshot&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[ĐỀ XUẤT: DTO bất biến truyền giữa Collector &amp;amp; Repository - CHỜ NHÓM DUYỆT]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="64" width="505" x="1125" y="1105" as="geometry" />
+        </mxCell>
+        <mxCell id="119" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#e11d48;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ totalConnections : &lt;code&gt;int&lt;/code&gt;&lt;br&gt;+ activeConnections : &lt;code&gt;int&lt;/code&gt;&lt;br&gt;+ commandCounts : &lt;code&gt;Map&amp;lt;String, Integer&amp;gt;&lt;/code&gt;&lt;br&gt;+ capturedAt : &lt;code&gt;LocalDateTime&lt;/code&gt;" vertex="1">
+          <mxGeometry height="76" width="505" x="1125" y="1169" as="geometry" />
+        </mxCell>
+        <mxCell id="120" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#db2777;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="195" width="455" x="1675" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="121" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#831843;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;SessionHistoryManager&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[Mở rộng F14 – Lịch sử lệnh HISTORY từng kết nối]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="455" x="1675" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="122" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#db2777;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- history : &lt;code&gt;Deque&amp;lt;Request&amp;gt;&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(ArrayDeque giới hạn N lệnh)&lt;/i&gt;&lt;/font&gt;&lt;br&gt;- maxEntries : &lt;code&gt;int&lt;/code&gt;" vertex="1">
+          <mxGeometry height="49" width="455" x="1675" y="858" as="geometry" />
+        </mxCell>
+        <mxCell id="123" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#db2777;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ SessionHistoryManager(maxEntries: int)&lt;br&gt;+ recordCommand(request: Request) : &lt;code&gt;void&lt;/code&gt;&lt;br&gt;+ getRecentCommands() : &lt;code&gt;List&amp;lt;Request&amp;gt;&lt;/code&gt;&lt;br&gt;+ formatHistory() : &lt;code&gt;String&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(Streams API)&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="98" width="455" x="1675" y="907" as="geometry" />
+        </mxCell>
+        <mxCell id="124" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#db2777;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="195" width="470" x="2165" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="125" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#831843;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;RateLimiter&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[Mở rộng F15 – Giới hạn tốc độ theo cửa sổ thời gian]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="470" x="2165" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="126" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#db2777;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- maxRequests : &lt;code&gt;int&lt;/code&gt;&lt;br&gt;- windowMillis : &lt;code&gt;long&lt;/code&gt;&lt;br&gt;- clientWindows : &lt;code&gt;ConcurrentHashMap&amp;lt;String, Deque&amp;lt;Long&amp;gt;&amp;gt;&lt;/code&gt;" vertex="1">
+          <mxGeometry height="73" width="470" x="2165" y="858" as="geometry" />
+        </mxCell>
+        <mxCell id="127" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#db2777;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ RateLimiter(maxRequests: int, windowMillis: long)&lt;br&gt;+ tryAcquire(clientKey: String) : &lt;code&gt;boolean&lt;/code&gt;&lt;br&gt;+ evictClient(clientKey: String) : &lt;code&gt;void&lt;/code&gt;" vertex="1">
+          <mxGeometry height="74" width="470" x="2165" y="931" as="geometry" />
+        </mxCell>
+        <mxCell id="128" parent="1" style="shape=note;size=15;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#64748b;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=middle;align=left;spacingLeft=10;spacingRight=8;" value="&lt;b&gt;Ghi chú Thiết kế các Chức năng Mở rộng (F13–F16) &amp;amp; Đồng bộ với Lưu đồ Lõi / Sequence Diagrams:&lt;/b&gt;&lt;br&gt;&amp;bull; &lt;b&gt;Lệnh &lt;code&gt;TIME&lt;/code&gt; &amp;amp; &lt;code&gt;DATE&lt;/code&gt; (F06):&lt;/b&gt; Có thể cài đặt chung trong &lt;code&gt;TimeHandler&lt;/code&gt; (đăng ký 2 method reference &lt;code&gt;handleTime&lt;/code&gt;, &lt;code&gt;handleDate&lt;/code&gt; vào &lt;code&gt;CommandRegistry&lt;/code&gt;) hoặc tách thành &lt;code&gt;TimeHandler&lt;/code&gt; và &lt;code&gt;DateHandler&lt;/code&gt; như trên Sơ đồ Kiến trúc Phân lớp.&lt;br&gt;&amp;bull; &lt;b&gt;Lệnh &lt;code&gt;HISTORY&lt;/code&gt; (F14):&lt;/b&gt; &lt;code&gt;SessionHistoryManager&lt;/code&gt; gắn theo từng phiên &lt;code&gt;ClientHandler&lt;/code&gt; (tránh rò rỉ bộ nhớ khi đóng Socket); có thể đăng ký handler &lt;code&gt;HISTORY&lt;/code&gt; cho phiên hoặc xử lý trong luồng phiên.&lt;br&gt;&amp;bull; &lt;b&gt;Lệnh &lt;code&gt;HELP&lt;/code&gt; &amp;amp; &lt;code&gt;QUIT&lt;/code&gt; (F16):&lt;/b&gt; &lt;code&gt;HelpHandler&lt;/code&gt; tra cứu danh sách lệnh từ &lt;code&gt;CommandRegistry&lt;/code&gt;; riêng lệnh &lt;code&gt;QUIT&lt;/code&gt; điều khiển đóng vòng lặp phiên tại &lt;code&gt;ClientHandler&lt;/code&gt; (đúng Bước 2 trên Core Flowchart).&lt;br&gt;&amp;bull; &lt;b&gt;&lt;code&gt;RateLimiter&lt;/code&gt; (F15):&lt;/b&gt; Kiểm tra giới hạn tốc độ trước khi phân tích cú pháp/điều phối lệnh (đúng Bước 3 trên Core Flowchart)." vertex="1">
+          <mxGeometry height="220" width="960" x="1675" y="1025" as="geometry" />
+        </mxCell>
+        <mxCell id="129" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#ea580c;strokeWidth=1.8;dashed=1;dashPattern=6 3;fixDash=1;" value="" vertex="1">
+          <mxGeometry height="255" width="630" x="1125" y="1355" as="geometry" />
+        </mxCell>
+        <mxCell id="130" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;strokeWidth=1.5;dashed=1;dashPattern=6 3;fixDash=1;fontColor=#7c2d12;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="&lt;div style=&#39;font-size:13px;font-weight:bold;&#39;&gt;MetricsRepository&lt;/div&gt;&lt;div style=&#39;font-size:10.5px;color:#be185d;font-weight:bold;&#39;&gt;[ĐỀ XUẤT: Đặt tại package luutru, chỉ xử lý I/O CSV - CHỜ NHÓM DUYỆT]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="630" x="1125" y="1355" as="geometry" />
+        </mxCell>
+        <mxCell id="131" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ea580c;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="- csvPath : &lt;code&gt;Path&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(mặc định: data/metrics.csv)&lt;/i&gt;&lt;/font&gt;&lt;br&gt;- CSV_HEADER : &lt;code&gt;String = &quot;MetricType,Key,Value,LastUpdated&quot;&lt;/code&gt; &lt;i&gt;{static, final}&lt;/i&gt;" vertex="1">
+          <mxGeometry height="82" width="630" x="1125" y="1403" as="geometry" />
+        </mxCell>
+        <mxCell id="132" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ea580c;strokeWidth=1.2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingLeft=8;spacingRight=6;spacingTop=4;" value="+ MetricsRepository(csvPath: Path)&lt;br&gt;+ save(snapshot: MetricsSnapshot) : &lt;code&gt;void&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(tương ứng saveToCsv / saveMetrics – dùng try-with-resources)&lt;/i&gt;&lt;/font&gt;&lt;br&gt;+ load() : &lt;code&gt;Optional&amp;lt;MetricsSnapshot&amp;gt;&lt;/code&gt; &amp;nbsp;&lt;font color=&#39;#64748b&#39;&gt;&lt;i&gt;(tương ứng loadFromCsv / loadMetrics – dùng try-with-resources)&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="125" width="630" x="1125" y="1485" as="geometry" />
+        </mxCell>
+        <mxCell id="133" parent="1" style="rounded=1;arcSize=3;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=2;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=top;align=left;spacingTop=10;spacingLeft=14;spacingRight=14;" value="&lt;b&gt;BẢNG TỔNG HỢP 4 QUYẾT ĐỊNH KỸ THUẬT ĐANG CHỜ NHÓM THỐNG NHẤT &amp;amp; CHÚ GIẢI UML&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;1. Ngoại lệ &amp;amp; Functional Interface [CHỜ NHÓM DUYỆT]:&lt;/b&gt;&lt;/font&gt; Khuyến nghị &lt;code&gt;CommandException extends RuntimeException&lt;/code&gt; (Unchecked) để tương thích 100% với chữ ký bắt buộc &lt;code&gt;Map&amp;lt;String, Function&amp;lt;String, String&amp;gt;&amp;gt;&lt;/code&gt; mà không gây lỗi biên dịch Lambda.&lt;br&gt;&lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;2. Mô hình Kết quả Nghiệp vụ vs Giao thức [CHỜ NHÓM DUYỆT]:&lt;/b&gt;&lt;/font&gt; Khuyến nghị tách &lt;code&gt;sealed interface KetQua&lt;/code&gt; (&lt;code&gt;ThanhCong&lt;/code&gt;, &lt;code&gt;ThatBai&lt;/code&gt;) cho tầng &lt;code&gt;nghiepvu&lt;/code&gt; (đạt TC3 mức 4) và &lt;code&gt;record Response&lt;/code&gt; cho tầng &lt;code&gt;giaothuc&lt;/code&gt; (đóng gói chuỗi Socket).&lt;br&gt;&lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;3. Vị trí &lt;code&gt;MetricsCollector&lt;/code&gt; &amp;amp; &lt;code&gt;MetricsRepository&lt;/code&gt; [CHỜ NHÓM DUYỆT]:&lt;/b&gt;&lt;/font&gt; Khuyến nghị đặt &lt;code&gt;MetricsCollector&lt;/code&gt; (in-memory) ở &lt;code&gt;nghiepvu&lt;/code&gt; và &lt;code&gt;MetricsRepository&lt;/code&gt; (I/O CSV) ở &lt;code&gt;luutru&lt;/code&gt; để tầng nghiệp vụ không phụ thuộc ngược vào tầng lưu trữ.&lt;br&gt;&lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;4. Mô hình Đa luồng tại Server [CHỜ NHÓM DUYỆT]:&lt;/b&gt;&lt;/font&gt; Khuyến nghị dùng &lt;code&gt;ExecutorService (newFixedThreadPool)&lt;/code&gt; kết hợp &lt;code&gt;setSoTimeout&lt;/code&gt; thay cho &lt;code&gt;Thread-per-connection&lt;/code&gt;.&lt;br&gt;&lt;br&gt;&lt;b&gt;Chú giải Ký pháp Quan hệ UML:&lt;/b&gt;&lt;br&gt;&amp;bull; &lt;b&gt;Kế thừa (Inheritance):&lt;/b&gt; Nét liền, tam giác rỗng (&lt;code&gt;&amp;#9472;&amp;#9472;&amp;#9655;&lt;/code&gt;) &amp;nbsp;|&amp;nbsp; &lt;b&gt;Hiện thực hóa (Realization):&lt;/b&gt; Nét đứt, tam giác rỗng (&lt;code&gt;- - &amp;#9655;&lt;/code&gt;)&lt;br&gt;&amp;bull; &lt;b&gt;Hợp thành (Composition):&lt;/b&gt; Hình thoi đặc (&lt;code&gt;&amp;#9670;&amp;#9472;&amp;#9472;&amp;gt;&lt;/code&gt;) &amp;nbsp;|&amp;nbsp; &lt;b&gt;Kết tập (Aggregation):&lt;/b&gt; Hình thoi rỗng (&lt;code&gt;&amp;#9671;&amp;#9472;&amp;#9472;&amp;gt;&lt;/code&gt;)&lt;br&gt;&amp;bull; &lt;b&gt;Liên kết (Association):&lt;/b&gt; Nét liền, mũi tên mở (&lt;code&gt;&amp;#9472;&amp;#9472;&amp;gt;&lt;/code&gt;) &amp;nbsp;|&amp;nbsp; &lt;b&gt;Phụ thuộc (Dependency):&lt;/b&gt; Nét đứt, mũi tên mở (&lt;code&gt;- - &amp;gt;&lt;/code&gt;) &amp;nbsp;|&amp;nbsp; &lt;font color=&#39;#be185d&#39;&gt;&lt;b&gt;[Khung viền đứt]:&lt;/b&gt; Đề xuất chờ duyệt / Mở rộng&lt;/font&gt;" vertex="1">
+          <mxGeometry height="355" width="860" x="1795" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="134" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#475569;dashed=1;dashPattern=6 4;fixDash=1;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#475569;labelBackgroundColor=#ffffff;" value="&amp;laquo;realize&amp;raquo;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="765" y="290" as="sourcePoint" />
+            <mxPoint x="765" y="248" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="135" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#0284c7;startArrow=diamondThin;startFill=1;startSize=12;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#0284c7;labelBackgroundColor=#ffffff;" value="1 .. * (giao việc)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+            <mxPoint x="470" y="345" as="sourcePoint" />
+            <mxPoint x="545" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="136" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#0284c7;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#0284c7;labelBackgroundColor=#ffffff;" value="&amp;laquo;TCP Socket UTF-8&amp;raquo;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="257" y="525" as="sourcePoint" />
+            <mxPoint x="257" y="443" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="137" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#7c3aed;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#7c3aed;labelBackgroundColor=#ffffff;" value="sử dụng">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-110" as="offset" />
+            <Array as="points">
+              <mxPoint x="495" y="535" />
+              <mxPoint x="495" y="965" />
+            </Array>
+            <mxPoint x="545" y="535" as="sourcePoint" />
+            <mxPoint x="440" y="965" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="138" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#7c3aed;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#7c3aed;labelBackgroundColor=#ffffff;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="46" value="&amp;laquo;create&amp;raquo;">
+          <mxGeometry relative="1" x="-0.0304" as="geometry">
+            <mxPoint y="175" as="offset" />
+            <Array as="points">
+              <mxPoint x="510" y="565" />
+              <mxPoint x="514.43" y="1146" />
+            </Array>
+            <mxPoint x="545" y="565" as="sourcePoint" />
+            <mxPoint x="485" y="1185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="139" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#7c3aed;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#7c3aed;labelBackgroundColor=#ffffff;" value="&amp;laquo;create&amp;raquo;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-12" as="offset" />
+            <mxPoint x="440" y="1005" as="sourcePoint" />
+            <mxPoint x="535" y="1005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="140" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#e11d48;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#e11d48;labelBackgroundColor=#ffffff;" value="&amp;laquo;throws&amp;raquo;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="242" y="1105" />
+              <mxPoint x="648" y="1105" />
+              <mxPoint x="648" y="1340" />
+            </Array>
+            <mxPoint x="242" y="1065" as="sourcePoint" />
+            <mxPoint x="665" y="1340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="141" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#ca8a04;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#ca8a04;labelBackgroundColor=#ffffff;" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="155" y="1365" as="sourcePoint" />
+            <mxPoint x="155" y="1415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="142" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#ca8a04;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#ca8a04;labelBackgroundColor=#ffffff;" value="0..1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="375" y="1365" as="sourcePoint" />
+            <mxPoint x="375" y="1415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="143" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#475569;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#475569;labelBackgroundColor=#ffffff;" value="extends">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="835" y="1280" as="sourcePoint" />
+            <mxPoint x="835" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="144" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#e11d48;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#e11d48;labelBackgroundColor=#ffffff;" value="mang mã lỗi">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+            <mxPoint x="665" y="1465" as="sourcePoint" />
+            <mxPoint x="635" y="1465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="145" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#16a34a;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#16a34a;labelBackgroundColor=#ffffff;" value="điều phối qua">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="315" />
+              <mxPoint x="1030" y="235" />
+            </Array>
+            <mxPoint x="995" y="315" as="sourcePoint" />
+            <mxPoint x="1125" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="146" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#7c3aed;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#7c3aed;labelBackgroundColor=#ffffff;" value="nhận&lt;br&gt;Request">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="260" as="offset" />
+            <Array as="points">
+              <mxPoint x="1047.83" y="350" />
+              <mxPoint x="1050.83" y="1001.85" />
+            </Array>
+            <mxPoint x="1125" y="350" as="sourcePoint" />
+            <mxPoint x="995" y="1005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="147" edge="1" parent="1" source="46" style="html=1;strokeWidth=1.7;strokeColor=#7c3aed;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#7c3aed;labelBackgroundColor=#ffffff;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" value="&amp;laquo;maps from&amp;raquo;">
+          <mxGeometry relative="1" x="0.021" as="geometry">
+            <Array as="points">
+              <mxPoint x="523.9" y="1178" />
+              <mxPoint x="522" y="828" />
+              <mxPoint x="1028.09" y="828" />
+              <mxPoint x="1025.14" y="485" />
+            </Array>
+            <mxPoint x="485" y="1150" as="sourcePoint" />
+            <mxPoint x="1125" y="485" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="148" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#16a34a;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#16a34a;labelBackgroundColor=#ffffff;" value="cập nhật&lt;br&gt;kết nối">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-60" as="offset" />
+            <Array as="points">
+              <mxPoint x="1060" y="455" />
+              <mxPoint x="1060" y="860" />
+            </Array>
+            <mxPoint x="995" y="455" as="sourcePoint" />
+            <mxPoint x="1125" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="149" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#db2777;startArrow=diamondThin;startFill=1;startSize=12;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#db2777;labelBackgroundColor=#ffffff;" value="1 (gắn theo phiên)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1075" y="490" />
+              <mxPoint x="1075" y="785" />
+              <mxPoint x="1900" y="785" />
+            </Array>
+            <mxPoint x="995" y="490" as="sourcePoint" />
+            <mxPoint x="1900" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="150" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#db2777;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#db2777;labelBackgroundColor=#ffffff;" value="kiểm tra giới hạn tốc độ">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1090" y="525" />
+              <mxPoint x="1090" y="768" />
+              <mxPoint x="2400" y="768" />
+            </Array>
+            <mxPoint x="995" y="525" as="sourcePoint" />
+            <mxPoint x="2400" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="151" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#ea580c;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#ea580c;labelBackgroundColor=#ffffff;" value="nạp / lưu CSV khi khởi động &amp;amp; dừng">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="34" y="415" />
+              <mxPoint x="34" y="1650" />
+              <mxPoint x="1440" y="1650" />
+            </Array>
+            <mxPoint x="45" y="415" as="sourcePoint" />
+            <mxPoint x="1440" y="1610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="152" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#16a34a;startArrow=diamondThin;startFill=0;startSize=12;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#16a34a;labelBackgroundColor=#ffffff;" value="tra cứu">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-12" as="offset" />
+            <mxPoint x="1555" y="235" as="sourcePoint" />
+            <mxPoint x="1610" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="153" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#16a34a;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#16a34a;labelBackgroundColor=#ffffff;" value="ghi nhận lệnh">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1112" y="325" />
+              <mxPoint x="1112" y="830" />
+            </Array>
+            <mxPoint x="1125" y="325" as="sourcePoint" />
+            <mxPoint x="1125" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="154" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#e11d48;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#e11d48;labelBackgroundColor=#ffffff;" value="&amp;laquo;returns&amp;raquo;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1340" y="363" as="sourcePoint" />
+            <mxPoint x="1340" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="155" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#e11d48;dashed=1;dashPattern=6 4;fixDash=1;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#e11d48;labelBackgroundColor=#ffffff;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1227" y="595" as="sourcePoint" />
+            <mxPoint x="1227" y="545" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="156" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#e11d48;dashed=1;dashPattern=6 4;fixDash=1;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#e11d48;labelBackgroundColor=#ffffff;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1452" y="595" as="sourcePoint" />
+            <mxPoint x="1452" y="545" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="157" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#16a34a;startArrow=diamondThin;startFill=0;startSize=12;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#16a34a;labelBackgroundColor=#ffffff;" value="0..* (Map)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-12" as="offset" />
+            <mxPoint x="2060" y="215" as="sourcePoint" />
+            <mxPoint x="2130" y="215" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="158" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#475569;dashed=1;dashPattern=6 4;fixDash=1;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#475569;labelBackgroundColor=#ffffff;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2030" y="322" />
+              <mxPoint x="2382" y="322" />
+            </Array>
+            <mxPoint x="2030" y="355" as="sourcePoint" />
+            <mxPoint x="2382" y="278" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="159" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#475569;dashed=1;dashPattern=6 4;fixDash=1;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#475569;labelBackgroundColor=#ffffff;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2277" y="322" />
+              <mxPoint x="2382" y="322" />
+            </Array>
+            <mxPoint x="2277" y="355" as="sourcePoint" />
+            <mxPoint x="2382" y="278" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="160" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#475569;dashed=1;dashPattern=6 4;fixDash=1;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#475569;labelBackgroundColor=#ffffff;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2522" y="322" />
+              <mxPoint x="2382" y="322" />
+            </Array>
+            <mxPoint x="2522" y="355" as="sourcePoint" />
+            <mxPoint x="2382" y="278" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="161" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#475569;dashed=1;dashPattern=6 4;fixDash=1;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#475569;labelBackgroundColor=#ffffff;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2030" y="530" />
+              <mxPoint x="1895" y="530" />
+              <mxPoint x="1895" y="322" />
+              <mxPoint x="2382" y="322" />
+            </Array>
+            <mxPoint x="2030" y="550" as="sourcePoint" />
+            <mxPoint x="2382" y="278" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="162" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#475569;dashed=1;dashPattern=6 4;fixDash=1;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#475569;labelBackgroundColor=#ffffff;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2277" y="530" />
+              <mxPoint x="1895" y="530" />
+              <mxPoint x="1895" y="322" />
+              <mxPoint x="2382" y="322" />
+            </Array>
+            <mxPoint x="2277" y="550" as="sourcePoint" />
+            <mxPoint x="2382" y="278" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="163" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#475569;dashed=1;dashPattern=6 4;fixDash=1;endArrow=block;endFill=0;endSize=10;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#475569;labelBackgroundColor=#ffffff;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2522" y="530" />
+              <mxPoint x="1895" y="530" />
+              <mxPoint x="1895" y="322" />
+              <mxPoint x="2382" y="322" />
+            </Array>
+            <mxPoint x="2522" y="550" as="sourcePoint" />
+            <mxPoint x="2382" y="278" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="164" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#16a34a;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#16a34a;labelBackgroundColor=#ffffff;" value="truy vấn số liệu">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1650" y="640" />
+              <mxPoint x="1650" y="860" />
+            </Array>
+            <mxPoint x="1915" y="640" as="sourcePoint" />
+            <mxPoint x="1630" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="165" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#db2777;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#db2777;labelBackgroundColor=#ffffff;" value="lấy danh sách lệnh">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2522" y="745" />
+              <mxPoint x="1760" y="745" />
+            </Array>
+            <mxPoint x="2522" y="725" as="sourcePoint" />
+            <mxPoint x="1760" y="343" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="166" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#e11d48;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#e11d48;labelBackgroundColor=#ffffff;" value="&amp;laquo;create / restore&amp;raquo;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1377" y="1070" as="sourcePoint" />
+            <mxPoint x="1377" y="1105" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="167" edge="1" parent="1" style="html=1;strokeWidth=1.7;strokeColor=#ea580c;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=#ea580c;labelBackgroundColor=#ffffff;" value="&amp;laquo;save / load&amp;raquo;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-32" as="offset" />
+            <mxPoint x="1520" y="1355" as="sourcePoint" />
+            <mxPoint x="1520" y="1245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="168" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=middle;align=left;spacingLeft=14;spacingRight=14;" value="&lt;b&gt;NGUYÊN TẮC KIẾN TRÚC TRÊN SƠ ĐỒ LỚP UML (ĐỐI CHIẾU TIÊU CHÍ CHẤM RUBRIC TC3 MỨC 3–5):&lt;/b&gt;&lt;br&gt;&amp;bull; &lt;b&gt;Chiều phụ thuộc một chiều:&lt;/b&gt; &lt;code&gt;package mang&lt;/code&gt; &amp;rarr; &lt;code&gt;package nghiepvu&lt;/code&gt; &amp;amp; &lt;code&gt;package giaothuc&lt;/code&gt;; &lt;code&gt;package nghiepvu&lt;/code&gt; &lt;b&gt;hoàn toàn không import&lt;/b&gt; &lt;code&gt;java.net.Socket&lt;/code&gt;, &lt;code&gt;ServerSocket&lt;/code&gt; hay &lt;code&gt;package luutru&lt;/code&gt; (kiểm thử đơn vị JUnit 5 độc lập).&lt;br&gt;&amp;bull; &lt;b&gt;Tương thích 100% yêu cầu Đề 31:&lt;/b&gt; Giữ nguyên cấu trúc &lt;code&gt;Map&amp;lt;String, Function&amp;lt;String, String&amp;gt;&amp;gt;&lt;/code&gt; trong &lt;code&gt;CommandRegistry&lt;/code&gt;, bộ đếm an toàn luồng (&lt;code&gt;AtomicInteger&lt;/code&gt;, &lt;code&gt;ConcurrentHashMap&lt;/code&gt;) trong &lt;code&gt;MetricsCollector&lt;/code&gt;, và xử lý &lt;code&gt;STATS&lt;/code&gt; bằng Streams API." vertex="1">
+          <mxGeometry height="95" width="2630" x="25" y="1672" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
