@@ -123,3 +123,21 @@ java -cp bin mang.ConsoleClient
 
 Mặc định máy khách sẽ kết nối tới `localhost:8080`.
 
+---
+
+### 4.4. Biên dịch và Chạy kiểm thử đơn vị (Unit Tests - JUnit 5)
+
+Dự án sử dụng file standalone `junit-platform-console-standalone-1.14.4.jar` đặt tại thư mục `lib/`.
+
+- **Biên dịch cả mã nguồn (`src/`) và kiểm thử (`test/`):**
+  ```bash
+  mkdir -p bin
+  javac -cp "lib/junit-platform-console-standalone-1.14.4.jar:bin" -d bin $(find src test -name "*.java")
+  ```
+
+- **Thực thi toàn bộ kiểm thử đơn vị:**
+  ```bash
+  java -jar lib/junit-platform-console-standalone-1.14.4.jar execute --class-path bin --scan-class-path
+  ```
+
+
