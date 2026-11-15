@@ -70,7 +70,7 @@
             <mxPoint x="1425" y="1230" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="27" value="&lt;b&gt;MetricsCollector&lt;/b&gt; (F08)&lt;br&gt;&lt;small&gt;&lt;i&gt;Quản lý bộ đếm đa luồng&lt;/i&gt;&lt;/small&gt;&lt;br&gt;&lt;small&gt;&lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất: Tầng Nghiệp vụ]&lt;/b&gt;&lt;/font&gt;&lt;/small&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.8;fontColor=#881337;fontFamily=Helvetica;fontSize=12.5;verticalAlign=middle;align=center;dashed=1;dashPattern=6 3;fixDash=1;" vertex="1" parent="1">
+        <mxCell id="27" value="&lt;b&gt;MetricsCollector&lt;/b&gt; (F08)&lt;br&gt;&lt;small&gt;&lt;i&gt;Quản lý bộ đếm đa luồng&lt;/i&gt;&lt;/small&gt;&lt;br&gt;&lt;small&gt;&lt;i&gt;(Tầng Nghiệp vụ – nghiepvu)&lt;/i&gt;&lt;/small&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.8;fontColor=#881337;fontFamily=Helvetica;fontSize=12.5;verticalAlign=middle;align=center;dashed=1;dashPattern=6 3;fixDash=1;" vertex="1" parent="1">
           <mxGeometry x="1618" y="115" width="225" height="58" as="geometry"/>
         </mxCell>
         <mxCell id="28" value="" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#e11d48;html=1;" edge="1" parent="1">
@@ -234,16 +234,17 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="58" value="&lt;b&gt;11a.&lt;/b&gt; Đóng gói: &lt;code&gt;Response.ok(statsContent)&lt;/code&gt;&lt;br&gt;&lt;small&gt;&lt;font color='#be185d'&gt;[Đề xuất: hoặc qua KetQua.ThanhCong]&lt;/font&gt;&lt;/small&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=#ffffffd8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;align=left;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="58" value="&lt;b&gt;11a.&lt;/b&gt; Đóng gói: &lt;code&gt;KetQua.ThanhCong(statsContent)&lt;/code&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=#ffffffd8;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="1178" y="1005.5" width="240" height="36" as="geometry"/>
         </mxCell>
-        <mxCell id="59" value="&lt;b&gt;11b.&lt;/b&gt; Trả về &lt;code&gt;Response.ok(statsContent)&lt;/code&gt;" style="html=1;strokeWidth=1.8;strokeColor=#5b21b6;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=12;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=4;" edge="1" parent="1">
+        <mxCell id="59" value="&lt;b&gt;11b.&lt;/b&gt; Trả về: &lt;code&gt;KetQua.ThanhCong(statsContent)&lt;/code&gt;" style="html=1;strokeWidth=1.8;strokeColor=#5b21b6;dashed=1;dashPattern=6 4;fixDash=1;endArrow=open;endFill=0;endSize=8;fontFamily=Helvetica;fontSize=12;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=4;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1128" y="1085" as="sourcePoint"/>
             <mxPoint x="872" y="1085" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="60" value="&lt;b&gt;12.&lt;/b&gt; Ghi phản hồi: &lt;code&gt;write(&amp;quot;OK &amp;quot; + statsContent + &amp;quot;\n&amp;quot;)&lt;/code&gt;" style="html=1;strokeWidth=1.8;strokeColor=#15803d;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=12;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=4;" edge="1" parent="1">
+        <mxCell id="60" value="&lt;b&gt;12.&lt;/b&gt; Chuyển &lt;code&gt;KetQua&lt;/code&gt; → &lt;code&gt;Response.ok&lt;/code&gt; &amp;amp; ghi Socket: &lt;code&gt;write(&amp;quot;OK &amp;quot; + statsContent + &amp;quot;
+&amp;quot;)&lt;/code&gt;" style="html=1;strokeWidth=1.8;strokeColor=#15803d;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=12;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=4;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="858" y="1130" as="sourcePoint"/>
             <mxPoint x="612" y="1130" as="targetPoint"/>
@@ -261,7 +262,7 @@
             <mxPoint x="115" y="1210" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="63" value="&lt;b&gt;GHI CHÚ KỸ THUẬT &amp;amp; QUY TẮC UML:&lt;/b&gt;&lt;br&gt;• &lt;b&gt;An toàn luồng khi thống kê (Bước 6–8):&lt;/b&gt; &lt;code&gt;MetricsCollector&lt;/code&gt; tạo một &lt;b&gt;snapshot&lt;/b&gt; độc lập từ dữ liệu đồng thời (ví dụ: &lt;code&gt;ConcurrentHashMap&lt;/code&gt;, &lt;code&gt;AtomicInteger&lt;/code&gt;) trước khi trả về cho &lt;code&gt;StatsHandler&lt;/code&gt;; tuyệt đối không chạy Stream trực tiếp trên cấu trúc đang được các luồng khác cập nhật.&lt;br&gt;• &lt;b&gt;Phân định trách nhiệm:&lt;/b&gt; &lt;code&gt;MetricsCollector&lt;/code&gt; quản lý trạng thái bộ đếm &amp;amp; cung cấp snapshot; &lt;code&gt;StatsHandler&lt;/code&gt; xử lý nghiệp vụ thống kê; &lt;b&gt;Java Streams API&lt;/b&gt; (viền đứt xanh lam) là &lt;i&gt;cơ chế xử lý dữ liệu hàm&lt;/i&gt; (&lt;code&gt;stream → filter → groupingBy → sorted → collect&lt;/code&gt;), không phải một đối tượng nghiệp vụ độc lập.&lt;br&gt;• &lt;b&gt;Chú giải ký hiệu:&lt;/b&gt; &amp;nbsp; &lt;b&gt;──▶&lt;/b&gt; Lời gọi phương thức (Synchronous Call) &amp;nbsp;|&amp;nbsp; &lt;b&gt;- - &amp;gt;&lt;/b&gt; Kết quả trả về (Return) &amp;nbsp;|&amp;nbsp; &lt;b&gt;❚&lt;/b&gt; Activation Bar &amp;nbsp;|&amp;nbsp; &lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất / Viền đứt đỏ]&lt;/b&gt;&lt;/font&gt;: Chi tiết kỹ thuật chờ nhóm thống nhất chính thức." style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=middle;align=left;spacingLeft=14;spacingRight=14;" vertex="1" parent="1">
+        <mxCell id="63" value="&lt;b&gt;GHI CHÚ KỸ THUẬT &amp;amp; QUY TẮC UML:&lt;/b&gt;&lt;br&gt;• &lt;b&gt;An toàn luồng khi thống kê (Bước 6–8):&lt;/b&gt; &lt;code&gt;MetricsCollector&lt;/code&gt; (tầng &lt;code&gt;nghiepvu&lt;/code&gt; - Quyết định 3) tạo một &lt;b&gt;MetricsSnapshot&lt;/b&gt; độc lập từ dữ liệu đồng thời trước khi trả về cho &lt;code&gt;StatsHandler&lt;/code&gt;; tuyệt đối không chạy Stream trực tiếp trên cấu trúc đang được các luồng khác cập nhật.&lt;br&gt;• &lt;b&gt;Phân định trách nhiệm (Quyết định 2 &amp;amp; 3):&lt;/b&gt; &lt;code&gt;MetricsCollector&lt;/code&gt; quản lý bộ đếm &amp;amp; cung cấp snapshot; &lt;code&gt;CommandDispatcher&lt;/code&gt; trả &lt;code&gt;KetQua.ThanhCong&lt;/code&gt; nội bộ; &lt;code&gt;ClientHandler&lt;/code&gt; chuyển &lt;code&gt;KetQua&lt;/code&gt; thành &lt;code&gt;Response.ok&lt;/code&gt; trước khi ghi ra Socket.&lt;br&gt;• &lt;b&gt;Chú giải ký hiệu:&lt;/b&gt; &amp;nbsp; &lt;b&gt;──▶&lt;/b&gt; Lời gọi phương thức (Synchronous Call) &amp;nbsp;|&amp;nbsp; &lt;b&gt;- - &amp;gt;&lt;/b&gt; Kết quả trả về (Return) &amp;nbsp;|&amp;nbsp; &lt;b&gt;❚&lt;/b&gt; Activation Bar." style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=middle;align=left;spacingLeft=14;spacingRight=14;" vertex="1" parent="1">
           <mxGeometry x="25" y="1262" width="2370" height="96" as="geometry"/>
         </mxCell>
       </root>

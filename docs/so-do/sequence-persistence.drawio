@@ -16,7 +16,7 @@
         <mxCell id="14" value="&lt;b&gt;TẦNG DỮ LIỆU &amp;amp; LƯU TRỮ TỆP (Data &amp;amp; Persistence Layer – Quản lý I/O CSV)&lt;/b&gt;" style="rounded=1;arcSize=2;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#d97706;strokeWidth=1.5;fontColor=#92400e;fontFamily=Helvetica;fontSize=12.5;verticalAlign=top;align=center;spacingTop=6;" vertex="1" parent="1">
           <mxGeometry x="945" y="76" width="1490" height="1455" as="geometry"/>
         </mxCell>
-        <mxCell id="15" value="&lt;b&gt;JVM&lt;/b&gt;&lt;br&gt;&lt;small&gt;&lt;i&gt;Main Thread / ShutdownHook&lt;/i&gt;&lt;/small&gt;&lt;br&gt;&lt;small&gt;&lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất Hook]&lt;/b&gt;&lt;/font&gt;&lt;/small&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;strokeWidth=1.8;fontColor=#0c4a6e;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" vertex="1" parent="1">
+        <mxCell id="15" value="&lt;b&gt;JVM / Server Lifecycle&lt;/b&gt;&lt;br&gt;&lt;small&gt;&lt;i&gt;Main Thread / ShutdownHook / stop()&lt;/i&gt;&lt;/small&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;strokeWidth=1.8;fontColor=#0c4a6e;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;" vertex="1" parent="1">
           <mxGeometry x="53" y="112" width="165" height="58" as="geometry"/>
         </mxCell>
         <mxCell id="16" value="" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#0284c7;html=1;" edge="1" parent="1">
@@ -34,7 +34,7 @@
             <mxPoint x="425" y="1515" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="19" value="&lt;b&gt;MetricsCollector&lt;/b&gt; (F08)&lt;br&gt;&lt;small&gt;&lt;i&gt;Bộ đếm in-memory an toàn luồng&lt;/i&gt;&lt;/small&gt;&lt;br&gt;&lt;small&gt;&lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất: Tầng Nghiệp vụ]&lt;/b&gt;&lt;/font&gt;&lt;/small&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.8;fontColor=#881337;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;dashed=1;dashPattern=6 3;fixDash=1;" vertex="1" parent="1">
+        <mxCell id="19" value="&lt;b&gt;MetricsCollector&lt;/b&gt; (F08)&lt;br&gt;&lt;small&gt;&lt;i&gt;Bộ đếm in-memory an toàn luồng&lt;/i&gt;&lt;/small&gt;&lt;br&gt;&lt;small&gt;&lt;i&gt;(Tầng Nghiệp vụ – nghiepvu)&lt;/i&gt;&lt;/small&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.8;fontColor=#881337;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;dashed=1;dashPattern=6 3;fixDash=1;" vertex="1" parent="1">
           <mxGeometry x="643" y="112" width="235" height="58" as="geometry"/>
         </mxCell>
         <mxCell id="20" value="" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#e11d48;html=1;" edge="1" parent="1">
@@ -43,7 +43,7 @@
             <mxPoint x="760" y="1515" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="21" value="&lt;b&gt;MetricsRepository&lt;/b&gt; (F12)&lt;br&gt;&lt;small&gt;&lt;i&gt;Dịch vụ đọc / ghi tệp thống kê&lt;/i&gt;&lt;/small&gt;&lt;br&gt;&lt;small&gt;&lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất: Tầng Lưu trữ]&lt;/b&gt;&lt;/font&gt;&lt;/small&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.8;fontColor=#881337;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;dashed=1;dashPattern=6 3;fixDash=1;" vertex="1" parent="1">
+        <mxCell id="21" value="&lt;b&gt;MetricsRepository&lt;/b&gt; (F12)&lt;br&gt;&lt;small&gt;&lt;i&gt;Dịch vụ đọc / ghi tệp thống kê&lt;/i&gt;&lt;/small&gt;&lt;br&gt;&lt;small&gt;&lt;i&gt;(Tầng Lưu trữ – luutru)&lt;/i&gt;&lt;/small&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#fff1f2;strokeColor=#e11d48;strokeWidth=1.8;fontColor=#881337;fontFamily=Helvetica;fontSize=12;verticalAlign=middle;align=center;dashed=1;dashPattern=6 3;fixDash=1;" vertex="1" parent="1">
           <mxGeometry x="995" y="112" width="240" height="58" as="geometry"/>
         </mxCell>
         <mxCell id="22" value="" style="endArrow=none;dashed=1;dashPattern=5 5;strokeWidth=1.5;strokeColor=#e11d48;html=1;" edge="1" parent="1">
@@ -151,7 +151,7 @@
             <mxPoint x="418" y="244" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="52" value="&lt;b&gt;2.&lt;/b&gt; Gọi &lt;code&gt;loadFromCsv()&lt;/code&gt; &lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất chữ ký]&lt;/b&gt;&lt;/font&gt;" style="html=1;strokeWidth=1.8;strokeColor=#b45309;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" edge="1" parent="1">
+        <mxCell id="52" value="&lt;b&gt;2.&lt;/b&gt; Gọi &lt;code&gt;load()&lt;/code&gt; (hoặc &lt;code&gt;loadFromCsv()&lt;/code&gt;)" style="html=1;strokeWidth=1.8;strokeColor=#b45309;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="432" y="280" as="sourcePoint"/>
             <mxPoint x="1108" y="280" as="targetPoint"/>
@@ -200,7 +200,7 @@
         <mxCell id="59" value="&lt;b&gt;5.&lt;/b&gt; Phân tích dữ liệu CSV đã đọc (tách &lt;code&gt;MetricType, Key, Value&lt;/code&gt; &lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất]&lt;/b&gt;&lt;/font&gt;)" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=#ffffffdf;fontFamily=Helvetica;fontSize=11;fontColor=#0f172a;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="1152" y="505.0" width="340" height="34" as="geometry"/>
         </mxCell>
-        <mxCell id="60" value="&lt;b&gt;6a.&lt;/b&gt; Khôi phục trạng thái thống kê vào &lt;code&gt;MetricsCollector&lt;/code&gt; &lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất]&lt;/b&gt;&lt;/font&gt;" style="html=1;strokeWidth=1.8;strokeColor=#be185d;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" edge="1" parent="1">
+        <mxCell id="60" value="&lt;b&gt;6a.&lt;/b&gt; Khôi phục trạng thái thống kê vào &lt;code&gt;MetricsCollector&lt;/code&gt; từ snapshot" style="html=1;strokeWidth=1.8;strokeColor=#be185d;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1108" y="568" as="sourcePoint"/>
             <mxPoint x="767" y="568" as="targetPoint"/>
@@ -243,13 +243,13 @@
         <mxCell id="66" value="&lt;b&gt;9.&lt;/b&gt; Tiếp tục khởi động Server (mở &lt;code&gt;ServerSocket&lt;/code&gt;, sẵn sàng nhận kết nối)" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=#ffffffdf;fontFamily=Helvetica;fontSize=11;fontColor=#0f172a;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="464" y="760.5" width="295" height="34" as="geometry"/>
         </mxCell>
-        <mxCell id="67" value="&lt;b&gt;1.&lt;/b&gt; Kích hoạt &lt;code&gt;ShutdownHook&lt;/code&gt; &lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất]&lt;/b&gt;&lt;/font&gt; hoặc gọi &lt;code&gt;stop()&lt;/code&gt;" style="html=1;strokeWidth=1.8;strokeColor=#0369a1;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" edge="1" parent="1">
+        <mxCell id="67" value="&lt;b&gt;1.&lt;/b&gt; Kích hoạt &lt;code&gt;stop()&lt;/code&gt; / &lt;code&gt;ShutdownHook&lt;/code&gt; (ngừng nhận socket, &lt;code&gt;shutdown()&lt;/code&gt; threadPool)" style="html=1;strokeWidth=1.8;strokeColor=#0369a1;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="142" y="920" as="sourcePoint"/>
             <mxPoint x="418" y="920" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="68" value="&lt;b&gt;2.&lt;/b&gt; Yêu cầu tạo snapshot: &lt;code&gt;exportSnapshot()&lt;/code&gt; &lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất chữ ký]&lt;/b&gt;&lt;/font&gt;" style="html=1;strokeWidth=1.8;strokeColor=#be185d;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" edge="1" parent="1">
+        <mxCell id="68" value="&lt;b&gt;2.&lt;/b&gt; Yêu cầu tạo snapshot: &lt;code&gt;exportSnapshot()&lt;/code&gt; (hoặc &lt;code&gt;getSnapshot()&lt;/code&gt;)" style="html=1;strokeWidth=1.8;strokeColor=#be185d;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="432" y="955" as="sourcePoint"/>
             <mxPoint x="753" y="955" as="targetPoint"/>
@@ -277,7 +277,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="72" value="&lt;b&gt;5.&lt;/b&gt; Thực hiện &lt;code&gt;saveToCsv(snapshot)&lt;/code&gt; &lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất chữ ký]&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=#ffffffdf;fontFamily=Helvetica;fontSize=11;fontColor=#0f172a;align=left;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="72" value="&lt;b&gt;5.&lt;/b&gt; Thực hiện &lt;code&gt;save(snapshot)&lt;/code&gt; (hoặc &lt;code&gt;saveToCsv(snapshot)&lt;/code&gt;)" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=#ffffffdf;fontFamily=Helvetica;fontSize=11;fontColor=#0f172a;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="1152" y="1090.0" width="320" height="34" as="geometry"/>
         </mxCell>
         <mxCell id="73" value="&lt;b&gt;6.&lt;/b&gt; Mở tệp &lt;code&gt;metrics.csv&lt;/code&gt; để ghi dữ liệu" style="html=1;strokeWidth=1.8;strokeColor=#b45309;endArrow=block;endFill=1;endSize=7;fontFamily=Helvetica;fontSize=11.5;fontColor=#0f172a;labelBackgroundColor=#ffffff;verticalAlign=bottom;align=center;spacingBottom=3;" edge="1" parent="1">
@@ -328,7 +328,7 @@
             <mxPoint x="142" y="1475" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="81" value="&lt;b&gt;GHI CHÚ KỸ THUẬT &amp;amp; PHÂN ĐỊNH TRÁCH NHIỆM:&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Tách biệt trách nhiệm Nghiệp vụ và Lưu trữ:&lt;/b&gt; &lt;code&gt;MetricsCollector&lt;/code&gt; chỉ quản lý bộ đếm in-memory (khôi phục trạng thái ở Startup và trích xuất &lt;code&gt;snapshot&lt;/code&gt; ở Shutdown), &lt;b&gt;tuyệt đối không trực tiếp đọc/ghi tệp CSV&lt;/b&gt;. Mọi thao tác tệp (&lt;code&gt;metrics.csv&lt;/code&gt;) và quản lý luồng I/O đều do &lt;code&gt;MetricsRepository&lt;/code&gt; đảm nhiệm.&lt;br&gt;• &lt;b&gt;Quản lý tài nguyên an toàn (Chương 5, Chương 6):&lt;/b&gt; Cả &lt;code&gt;BufferedReader&lt;/code&gt; (Startup) và &lt;code&gt;PrintWriter&lt;/code&gt; (Shutdown) đều được khởi tạo bên trong khối &lt;code&gt;try-with-resources&lt;/code&gt; để đảm bảo tự động đóng (&lt;code&gt;close()&lt;/code&gt;) ngay cả khi xảy ra lỗi I/O.&lt;br&gt;• &lt;b&gt;Trạng thái thiết kế:&lt;/b&gt; Các chữ ký hàm (&lt;code&gt;loadFromCsv&lt;/code&gt;, &lt;code&gt;exportSnapshot&lt;/code&gt;, &lt;code&gt;saveToCsv&lt;/code&gt;), cấu trúc cột CSV, vị trí package của &lt;code&gt;MetricsCollector&lt;/code&gt; / &lt;code&gt;MetricsRepository&lt;/code&gt; và cơ chế &lt;code&gt;JVM ShutdownHook&lt;/code&gt; hiện là &lt;font color='#be185d'&gt;&lt;b&gt;[Đề xuất / Chưa chốt]&lt;/b&gt;&lt;/font&gt; chờ nhóm thống nhất." style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=middle;align=left;spacingLeft=14;spacingRight=14;" vertex="1" parent="1">
+        <mxCell id="81" value="&lt;b&gt;GHI CHÚ KỸ THUẬT &amp;amp; PHÂN ĐỊNH TRÁCH NHIỆM:&lt;/b&gt;&lt;br&gt;• &lt;b&gt;Tách biệt trách nhiệm Nghiệp vụ và Lưu trữ (Quyết định 3):&lt;/b&gt; &lt;code&gt;MetricsCollector&lt;/code&gt; thuộc package &lt;code&gt;nghiepvu&lt;/code&gt; quản lý bộ đếm in-memory an toàn luồng và tạo &lt;code&gt;MetricsSnapshot&lt;/code&gt;; &lt;code&gt;MetricsRepository&lt;/code&gt; thuộc package &lt;code&gt;luutru&lt;/code&gt; đọc/ghi tệp &lt;code&gt;metrics.csv&lt;/code&gt; thông qua snapshot.&lt;br&gt;• &lt;b&gt;Trình tự Shutdown và Quản lý Worker (Quyết định 4):&lt;/b&gt; Khi dừng Server, &lt;code&gt;CommandServer.stop()&lt;/code&gt; đóng &lt;code&gt;ServerSocket&lt;/code&gt;, gọi &lt;code&gt;threadPool.shutdown()&lt;/code&gt; và &lt;code&gt;awaitTermination(...)&lt;/code&gt; chờ Worker hoàn tất trong thời hạn phù hợp, sau đó mới tạo snapshot và lưu CSV để đảm bảo dữ liệu toàn vẹn.&lt;br&gt;• &lt;b&gt;Quản lý tài nguyên an toàn (Chương 5, Chương 6):&lt;/b&gt; Cả &lt;code&gt;BufferedReader&lt;/code&gt; (Startup) và &lt;code&gt;PrintWriter&lt;/code&gt; (Shutdown) đều được khởi tạo bên trong khối &lt;code&gt;try-with-resources&lt;/code&gt; tự động đóng an toàn." style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.5;fontColor=#1e293b;fontFamily=Helvetica;fontSize=11.5;verticalAlign=middle;align=left;spacingLeft=14;spacingRight=14;" vertex="1" parent="1">
           <mxGeometry x="25" y="1545" width="2410" height="98" as="geometry"/>
         </mxCell>
       </root>
