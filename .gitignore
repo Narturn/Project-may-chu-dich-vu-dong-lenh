@@ -1,2 +1,6 @@
 # Ignore all reference materials
 /reference/
+
+# Compiled Java bytecode
+bin/
+*.class
