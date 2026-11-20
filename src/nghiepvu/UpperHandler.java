@@ -1,6 +1,9 @@
 package nghiepvu;
 
 import giaothuc.CommandException;
+import giaothuc.ErrorCode;
+
+import java.util.Locale;
 import java.util.function.Function;
 
 /**
@@ -14,7 +17,11 @@ public class UpperHandler implements Function<String, String> {
 
     @Override
     public String apply(String args) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (args == null || args.isBlank()) {
+            throw new CommandException(ErrorCode.ERR_INVALID_ARGUMENT,
+                    "Tham số của lệnh UPPER không được để trống");
+        }
+        return args.toUpperCase(Locale.ROOT);
     }
 }
 
