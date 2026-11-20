@@ -1,5 +1,3 @@
-package test;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,4 +11,3 @@ class SampleJUnit5Test {
         assertEquals(expected, actual, "Phep tinh 2 + 2 phai bang 4");
     }
 }
-

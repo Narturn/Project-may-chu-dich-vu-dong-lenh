@@ -1,7 +1,5 @@
 package giaothuc;
 
-import nghiepvu.KetQua;
-
 /**
  * Bản tin phản hồi của giao thức mạng TCP được gửi trả về máy khách.
  *
@@ -9,6 +7,24 @@ import nghiepvu.KetQua;
  * @param payload nội dung kết quả thành công hoặc mã lỗi kèm thông điệp chi tiết
  */
 public record Response(StatusCode status, String payload) {
+
+    /**
+     * Compact constructor kiểm tra tính hợp lệ và chuẩn hóa dữ liệu bản tin phản hồi.
+     */
+    public Response {
+        if (status == null) {
+            throw new IllegalArgumentException("Mã trạng thái phản hồi không được null");
+        }
+        if (payload == null) {
+            payload = "";
+        } else {
+            // Chuẩn hóa / làm phẳng ký tự xuống dòng nhiều tầng thành escape sequence "\n"
+            // để bảo vệ giao thức văn bản 1 dòng qua TCP, tránh gây vỡ khung bản tin phía nhận.
+            payload = payload.replace("\r\n", "\\n")
+                             .replace("\r", "\\n")
+                             .replace("\n", "\\n");
+        }
+    }
 
     /**
      * Tạo bản tin phản hồi thành công.
@@ -31,19 +47,6 @@ public record Response(StatusCode status, String payload) {
         String detail = (code != null ? code.name() : ErrorCode.ERR_INTERNAL.name())
                 + (msg != null && !msg.isBlank() ? " " + msg : "");
         return new Response(StatusCode.ERR, detail);
-    }
-
-    /**
-     * Chuyển đổi từ đối tượng kết quả nội bộ tầng nghiệp vụ sang Response giao thức mạng.
-     *
-     * @param ketQua kết quả nội bộ {@link KetQua}
-     * @return đối tượng {@link Response} tương ứng
-     */
-    public static Response fromKetQua(KetQua ketQua) {
-        return switch (ketQua) {
-            case KetQua.ThanhCong thanhCong -> ok(thanhCong.duLieu());
-            case KetQua.ThatBai thatBai -> err(thatBai.maLoi(), thatBai.thongDiep());
-        };
     }
 
     /**
