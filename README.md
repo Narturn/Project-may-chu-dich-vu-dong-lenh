@@ -140,4 +140,13 @@ Dự án sử dụng file standalone `junit-platform-console-standalone-1.14.4.j
   java -jar lib/junit-platform-console-standalone-1.14.4.jar execute --class-path bin --scan-class-path
   ```
 
+### 4.5. Phạm vi hiện tại của F05
 
+- `CommandServer` lắng nghe TCP, mặc định cổng `8080`, 10 worker và timeout đọc 60 giây. Cổng `0` cho phép hệ điều hành chọn cổng trống; `getPort()` trả cổng thực tế.
+- Mỗi kết nối gửi được nhiều lệnh, đọc/ghi UTF-8, nhận đúng một dòng phản hồi cho mỗi lệnh. LF, CRLF và CR đều được hỗ trợ.
+- Giới hạn tổng số phiên đang chạy và chờ bằng hai lần số worker (mặc định 20). Kết nối vượt giới hạn nhận `ERR ERR_INTERNAL` kèm thông báo máy chủ bận rồi đóng.
+- Dòng quá 4096 ký tự bị từ chối ngay khi đọc, trả `ERR ERR_SYNTAX` và đóng phiên. Lỗi cú pháp/lệnh thông thường vẫn giữ kết nối cho lệnh tiếp theo.
+- `stop()` và shutdown hook đóng cổng, đóng socket đang chạy/chờ rồi đợi worker kết thúc trong thời hạn hữu hạn. Một instance server chỉ khởi động một lần.
+- F05 dùng Registry/Dispatcher thật của F04. Điểm chạy `main` hiện khởi tạo registry rỗng; các handler TIME/DATE, ECHO/UPPER và STATS sẽ được đăng ký khi hoàn thiện F06/F07/F09. Những Lambda trong test chỉ là dữ liệu kiểm thử hạ tầng mạng.
+- Bộ đếm F08 và lưu CSV F12 chưa triển khai nên F05 chưa gọi các hàm thống kê hoặc repository. Lịch sử, rate limiter và lệnh QUIT/EXIT thuộc F14/F15/F16, chưa được kích hoạt.
+- Kiểm thử mạng nằm trong `test/mang/CommandServerTest.java`, gồm nhiều client đồng thời, lỗi lệnh, timeout, quá tải, mất kết nối, cổng bị chiếm và shutdown hook trong JVM riêng.
