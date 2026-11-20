@@ -9,13 +9,30 @@ public class CommandException extends RuntimeException {
 
     private final ErrorCode errorCode;
 
+    private static String normalizeMessage(ErrorCode errorCode, String message) {
+        if (errorCode == null) {
+            throw new IllegalArgumentException("Mã lỗi không được null");
+        }
+        return message == null || message.isBlank() ? errorCode.getDefaultMessage() : message;
+    }
+
+    /**
+     * Tạo lỗi F02 với mã bắt buộc và thông điệp; nếu thông điệp trống thì dùng mô tả mặc định.
+     *
+     * @throws IllegalArgumentException nếu mã lỗi là null
+     */
     public CommandException(ErrorCode errorCode, String message) {
-        super(message);
+        super(normalizeMessage(errorCode, message));
         this.errorCode = errorCode;
     }
 
+    /**
+     * Tạo lỗi F02 và giữ nguyên nguyên nhân gốc để truy vết khi xử lý hoặc ghi log.
+     *
+     * @throws IllegalArgumentException nếu mã lỗi là null
+     */
     public CommandException(ErrorCode errorCode, String message, Throwable cause) {
-        super(message, cause);
+        super(normalizeMessage(errorCode, message), cause);
         this.errorCode = errorCode;
     }
 
