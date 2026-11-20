@@ -12,7 +12,7 @@ public class EchoHandler implements Function<String, String> {
 
     @Override
     public String apply(String args) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return args == null ? "" : args;
     }
 }
 

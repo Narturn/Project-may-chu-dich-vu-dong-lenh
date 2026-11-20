@@ -5,7 +5,10 @@ import giaothuc.Response;
 import luutru.MetricsRepository;
 import nghiepvu.CommandDispatcher;
 import nghiepvu.CommandRegistry;
+import nghiepvu.EchoHandler;
 import nghiepvu.MetricsCollector;
+import nghiepvu.TimeHandler;
+import nghiepvu.UpperHandler;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -196,7 +199,13 @@ public class CommandServer {
         if (args.length > 1) throw new IllegalArgumentException("Cú pháp: CommandServer [port]");
         int port = args.length == 0 ? DEFAULT_PORT : Integer.parseInt(args[0]);
         MetricsCollector metrics = new MetricsCollector();
-        CommandDispatcher dispatcher = new CommandDispatcher(new CommandRegistry(), metrics);
+        CommandRegistry registry = new CommandRegistry();
+        TimeHandler timeHandler = new TimeHandler();
+        registry.register("ECHO", new EchoHandler());
+        registry.register("UPPER", new UpperHandler());
+        registry.register("TIME", timeHandler::handleTime);
+        registry.register("DATE", timeHandler::handleDate);
+        CommandDispatcher dispatcher = new CommandDispatcher(registry, metrics);
         new CommandServer(port, dispatcher, metrics, null).start();
     }
 }
