@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("F01 - Kiểm thử mô hình Response và StatusCode")
+@DisplayName("F01, F10 - Kiểm thử mô hình Response, StatusCode và chuẩn hóa phản hồi")
 class ResponseTest {
 
     @Nested
@@ -76,11 +76,45 @@ class ResponseTest {
         @Test
         @DisplayName("Tạo Response.err khi ErrorCode là null thì fallback về ERR_INTERNAL")
         void testResponseErrWithNullCode() {
-            Response response = Response.err(null, "Loi khong xac dinh");
+            Response response = Response.err((ErrorCode) null, "Loi khong xac dinh");
 
             assertEquals(StatusCode.ERR, response.status());
             assertEquals("ERR_INTERNAL Loi khong xac dinh", response.payload());
             assertEquals("ERR ERR_INTERNAL Loi khong xac dinh\n", response.toProtocolString());
+        }
+
+        @Test
+        @DisplayName("F10: Tạo Response.err với mã lỗi chuỗi hợp lệ")
+        void testResponseErrWithStringCodeValid() {
+            Response response = Response.err("ERR_SYNTAX", "Sai cu phap");
+
+            assertEquals(StatusCode.ERR, response.status());
+            assertEquals("ERR_SYNTAX Sai cu phap", response.payload());
+            assertEquals("ERR ERR_SYNTAX Sai cu phap\n", response.toProtocolString());
+        }
+
+        @Test
+        @DisplayName("F10: Mã lỗi chuỗi không xác định hoặc không hợp lệ fallback an toàn về ERR_INTERNAL")
+        void testResponseErrWithStringCodeInvalidOrUnknown() {
+            Response respUnknown = Response.err("ERR_NON_EXISTENT", "Loi la");
+            assertEquals("ERR_INTERNAL Loi la", respUnknown.payload());
+            assertEquals("ERR ERR_INTERNAL Loi la\n", respUnknown.toProtocolString());
+
+            Response respBlank = Response.err("   ", "Loi rong");
+            assertEquals("ERR_INTERNAL Loi rong", respBlank.payload());
+            assertEquals("ERR ERR_INTERNAL Loi rong\n", respBlank.toProtocolString());
+
+            Response respNull = Response.err((String) null, "Loi null");
+            assertEquals("ERR_INTERNAL Loi null", respNull.payload());
+            assertEquals("ERR ERR_INTERNAL Loi null\n", respNull.toProtocolString());
+        }
+
+        @Test
+        @DisplayName("F10: Thông báo lỗi có khoảng trắng thừa ở đầu/cuối được chuẩn hóa trim gọn gàng")
+        void testErrorMessageTrimming() {
+            Response response = Response.err(ErrorCode.ERR_INVALID_ARGUMENT, "   Tham so am   ");
+            assertEquals("ERR_INVALID_ARGUMENT Tham so am", response.payload());
+            assertEquals("ERR ERR_INVALID_ARGUMENT Tham so am\n", response.toProtocolString());
         }
     }
 
@@ -117,11 +151,34 @@ class ResponseTest {
             assertFalse(response.payload().contains("\r"), "Payload không được chứa ký tự \\r trần");
             assertFalse(response.payload().contains("\n"), "Payload không được chứa ký tự \\n trần");
 
-            // Chuỗi giao thức toProtocolString() phải có đúng 1 ký tự xuống dòng ở cuối cùng
+            // Chuỗi giao thức toProtocolString() phải có đúng 1 ký tự xuống dòng ở cuối
+            // cùng
             String protoStr = response.toProtocolString();
             assertTrue(protoStr.endsWith("\n"));
             assertEquals(1, protoStr.chars().filter(ch -> ch == '\n').count(),
                     "Bản tin giao thức gửi qua TCP phải đúng 1 dòng (chỉ chứa 1 ký tự \\n ở cuối)");
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {
+                "Loi dong 1\r\nLoi dong 2",
+                "Loi dong 1\nLoi dong 2",
+                "Loi dong 1\rLoi dong 2",
+                "Loi dong 1\n\nLoi dong 2\r\nLoi dong 3\n"
+        })
+        @DisplayName("F10: Thông báo lỗi chứa ký tự xuống dòng phải được làm phẳng thành 1 dòng giao thức")
+        void testErrorMessageSanitization(String multiLineError) {
+            Response response = Response.err(ErrorCode.ERR_SYNTAX, multiLineError);
+
+            assertFalse(response.payload().contains("\r"), "Payload lỗi không được chứa ký tự \\r trần");
+            assertFalse(response.payload().contains("\n"), "Payload lỗi không được chứa ký tự \\n trần");
+
+            String protoStr = response.toProtocolString();
+            assertTrue(protoStr.startsWith("ERR ERR_SYNTAX "), "Bản tin phải bắt đầu bằng ERR ERR_SYNTAX");
+            assertTrue(protoStr.endsWith("\n"), "Bản tin phải kết thúc bằng \\n");
+            assertTrue(response.payload().contains("\\n"), "Ký tự xuống dòng phải được chuyển thành chuỗi literal \\n");
+            assertEquals(1, protoStr.chars().filter(ch -> ch == '\n').count(),
+                    "Bản tin phản hồi lỗi TCP phải đúng 1 dòng duy nhất");
         }
     }
 
@@ -140,4 +197,3 @@ class ResponseTest {
         }
     }
 }
-
