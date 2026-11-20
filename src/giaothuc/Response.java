@@ -45,8 +45,29 @@ public record Response(StatusCode status, String payload) {
      */
     public static Response err(ErrorCode code, String msg) {
         String detail = (code != null ? code.name() : ErrorCode.ERR_INTERNAL.name())
-                + (msg != null && !msg.isBlank() ? " " + msg : "");
+                + (msg != null && !msg.isBlank() ? " " + msg.trim() : "");
         return new Response(StatusCode.ERR, detail);
+    }
+
+    /**
+     * Tạo bản tin phản hồi báo lỗi từ mã lỗi dạng chuỗi và thông điệp chi tiết (F10).
+     * Tự động chuyển đổi an toàn: nếu mã lỗi rỗng, null hoặc không nằm trong danh mục định nghĩa
+     * thì fallback về {@link ErrorCode#ERR_INTERNAL} mà không làm chương trình bị crash.
+     *
+     * @param rawCode chuỗi mã lỗi (ví dụ: "ERR_SYNTAX")
+     * @param msg     thông điệp lỗi chi tiết
+     * @return đối tượng {@link Response} với trạng thái ERR
+     */
+    public static Response err(String rawCode, String msg) {
+        ErrorCode code = ErrorCode.ERR_INTERNAL;
+        if (rawCode != null && !rawCode.isBlank()) {
+            try {
+                code = ErrorCode.valueOf(rawCode.trim());
+            } catch (IllegalArgumentException ignored) {
+                // Mã lỗi không nằm trong danh mục đã định nghĩa -> fallback về ERR_INTERNAL
+            }
+        }
+        return err(code, msg);
     }
 
     /**
