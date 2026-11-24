@@ -123,6 +123,7 @@ public class CommandServer {
         }
         client.setSoTimeout(soTimeoutMillis);
         clientSockets.add(client);
+        metrics.recordAcceptedConnection();
         try {
             threadPool.execute(() -> {
                 try {

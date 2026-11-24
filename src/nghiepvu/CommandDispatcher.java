@@ -50,6 +50,7 @@ public class CommandDispatcher {
             Function<String, String> handler = handlerOpt.get();
             String rawResult = handler.apply(request.args());
             String resultData = rawResult == null ? "" : rawResult;
+            metrics.recordCommand(request.command());
             return new KetQua.ThanhCong(resultData);
         } catch (CommandException e) {
             return new KetQua.ThatBai(e.getErrorCode(), e.getMessage());
