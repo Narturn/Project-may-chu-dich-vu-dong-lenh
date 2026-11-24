@@ -53,6 +53,9 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run() {
+        if (metrics != null) {
+            metrics.incrementActiveConnection();
+        }
         try (Socket socket = clientSocket;
              BufferedReader input = new BufferedReader(new InputStreamReader(
                      socket.getInputStream(), StandardCharsets.UTF_8));
@@ -75,6 +78,10 @@ public class ClientHandler implements Runnable {
             System.err.println("Đóng kết nối nhàn rỗi: " + clientSocket.getRemoteSocketAddress());
         } catch (IOException e) {
             System.err.println("Kết thúc kết nối client: " + e.getMessage());
+        } finally {
+            if (metrics != null) {
+                metrics.decrementActiveConnection();
+            }
         }
     }
 
