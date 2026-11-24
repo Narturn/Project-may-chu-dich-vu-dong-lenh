@@ -71,12 +71,13 @@ public class MetricsCollector {
     }
 
     /**
-     * Tổng hợp báo cáo thống kê các lệnh bằng Streams API pipeline (triển khai ở F09).
+     * Tổng hợp báo cáo thống kê các lệnh bằng Streams API pipeline (F09).
+     * Ủy quyền định dạng qua {@link StatsHandler} để tránh lặp lại logic Stream.
      *
      * @return chuỗi định dạng thống kê chi tiết
      */
     public String getMetricsSummary() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new StatsHandler(this).apply("");
     }
 
     /**

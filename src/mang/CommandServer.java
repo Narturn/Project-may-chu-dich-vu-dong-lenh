@@ -7,6 +7,7 @@ import nghiepvu.CommandDispatcher;
 import nghiepvu.CommandRegistry;
 import nghiepvu.EchoHandler;
 import nghiepvu.MetricsCollector;
+import nghiepvu.StatsHandler;
 import nghiepvu.TimeHandler;
 import nghiepvu.UpperHandler;
 
@@ -206,6 +207,7 @@ public class CommandServer {
         registry.register("UPPER", new UpperHandler());
         registry.register("TIME", timeHandler::handleTime);
         registry.register("DATE", timeHandler::handleDate);
+        registry.register("STATS", new StatsHandler(metrics));
         CommandDispatcher dispatcher = new CommandDispatcher(registry, metrics);
         new CommandServer(port, dispatcher, metrics, null).start();
     }
